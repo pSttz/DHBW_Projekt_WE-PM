@@ -1,1 +1,1 @@
-# DHBW_Projekt_WE-PM 
+# Webengineering / PM Projekt
