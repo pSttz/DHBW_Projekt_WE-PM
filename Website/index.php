@@ -17,6 +17,12 @@
 
 </head>
 <body>
+
+	<?php
+
+		include('menu.php');
+	?>
+
 	<?php
 	if (! isset($_GET['p']))
     {

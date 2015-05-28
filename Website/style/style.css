@@ -21,13 +21,18 @@
 
 .menuitem{
 
-	width: 250px;
-	height: 100px;
+	width: 200px;
+	height: 30px;
 
+	font-weight: bold;
+	font-size: 2em;
+	text-align: center;
 	color: #363636;
+	
 }
 
 .menuitem:hover{
 	 -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; transition: all .3s ease-in-out;
-	color: cyan;
+	color: #50E6FF;
+	cursor: pointer;
 }
