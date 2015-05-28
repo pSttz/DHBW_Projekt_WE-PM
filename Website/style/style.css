@@ -1,0 +1,33 @@
+.flexparent{
+
+	display: flex;
+}
+
+.flexpage{
+	flex-direction: column;
+}
+
+.flexmenu{
+
+	flex-direction: row;
+	justify-content: center;	
+	
+	background-color: white;
+}
+
+.menu{
+	max-width: 1024px;
+}
+
+.menuitem{
+
+	width: 250px;
+	height: 100px;
+
+	color: #363636;
+}
+
+.menuitem:hover{
+
+	color: cyan;
+}
