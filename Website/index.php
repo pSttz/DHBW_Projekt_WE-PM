@@ -18,7 +18,27 @@
 </head>
 <body>
 	<?php
-	$link = $_GET['link'];
+	if (! isset($_GET['p']))
+    {
+        include('home.php');
+
+    } else {    
+        $page = $_GET['p'];  
+        switch($page)
+        {
+            case 'gallery':
+                include('gallery.php');
+                break;  
+            case 'products':
+                include('products.php');
+                break;  
+            case 'contact':
+                include('contact.php');
+                break;  
+
+                //und/oder home.php hier als default?    
+        }
+    }
 	?>
 
 	<div>
