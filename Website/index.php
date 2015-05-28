@@ -34,9 +34,9 @@
                 break;  
             case 'contact':
                 include('contact.php');
-                break;  
-
-                //und/oder home.php hier als default?    
+                break; 
+            default:
+             	include('home.php'); 
         }
     }
 	?>
