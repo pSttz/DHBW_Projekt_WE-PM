@@ -11,7 +11,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="script/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="script/script.js"></script>
-
 </head>
 <body>
 	<?php
@@ -45,11 +44,11 @@
 		?>
 
 		<?php 
-			$item = mysqli_query($content, "SELECT * FROM galerie");
-			while($data = mysqli_fetch_array($item))
-			{
-				echo($data[1]."<img src='".$data[2]."' width='100px'><br />");
-			}
+			//$item = mysqli_query($content, "SELECT * FROM galerie");
+			//while($data = mysqli_fetch_array($item))
+			//{
+			//	echo($data[1]."<img src='".$data[2]."' width='100px'><br />");
+			//}
 		?>
 	</div>
 </body>
