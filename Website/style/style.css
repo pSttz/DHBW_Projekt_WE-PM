@@ -195,12 +195,41 @@ h2 {
     padding-left: 2px;
 }
 
+#topbox {
+  background: #333;
+  padding: 10px 0 10px 0;
+  text-align: left;
+  height: 29px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: height 0.5s linear;
+  -moz-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+}
+#topbox a {
+  color: #4CE6E6;
+  text-decoration: none;
+}
+#topbox a:hover {
+  opacity: 1;
 
-
-
-
-
-
+}
+ 
+#tophiddenbox {
+  display: block;
+  width: 100%;
+  background: #333;
+  text-align: left;
+}
+#tophiddenbox a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5;
+  text-shadow: none;
+}
+#tophiddenbox a:hover { opacity: 1; }
+ 
+#topbox:hover { height: 100px; }
 
 
 
