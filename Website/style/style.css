@@ -247,20 +247,14 @@ h2 {
 	text-decoration: underline;
 }
 
-.linkcontent{
+#passbildContent{
+	width: 100%;
 
-	margin-top: 5px;
-	padding: 2px;
-	display: block;
 }
 
-.linkcontenLeft{
-	float: left;
-}
+#passbildContent td{
 
-.linkcontentRight{
-	float: left;
+	padding-top: 10px;
 }
-
 
 

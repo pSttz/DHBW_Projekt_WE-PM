@@ -18,30 +18,31 @@ Unsere Leistungen:
 <br>
 <div class="click link" onclick="toggle_visibility('passbilder');" >&raquo; Passbilder</div>
 	<div id="passbilder" style='display:none;'>
-		<div class="linkcontent">
-			<div class="linkcontentLeft">
-				Biometrische Passbilder (4 St&uuml;ck)<br>
-				- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
-			</div>	
-			<div class="linkcontentRight">
-				12,00 &euro;
-			</div>
-		</div>
-		<br>
-		<div class="linkcontent">
-			<div class="linkcontentLeft">
-				Biometrische Passbilder (6 St&uuml;ck)<br>
-				- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
-			</div>	
-			<div class="linkcontentRight">
-				15,00 &euro;
-			</div>
-		</div>
-
+		
+		<table id="passbildContent">
+			<tr>
+				<td class="tableLeft">
+					Biometrische Passbilder (4 St&uuml;ck)<br>
+					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+				</td>	
+			
+				<td>
+					12,00 &euro;
+				</td>
+			</tr>
+			<tr>
+				<td class="tableLeft">
+					Biometrische Passbilder (6 St&uuml;ck)<br>
+					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+				</td>	
+				<td>
+					15,00 &euro;
+				</td>
+			</tr>
+		</table>
 	</div>
+	
 <br>
-
-
 
 <div class="click link" onclick="toggle_visibility('fotoshootings');">&raquo; Fotoshootings</div>
   <div id="fotoshootings" style="display:none;">
