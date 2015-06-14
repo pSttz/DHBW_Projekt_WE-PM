@@ -241,6 +241,9 @@ h2 {
 
 
 
+/*-------------------------- Products -----------------------------*/
 
-
+.link:hover{
+	text-decoration: underline;
+}
 
