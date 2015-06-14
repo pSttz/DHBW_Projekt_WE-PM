@@ -247,5 +247,20 @@ h2 {
 	text-decoration: underline;
 }
 
+.linkcontent{
+
+	margin-top: 5px;
+	padding: 2px;
+	display: block;
+}
+
+.linkcontenLeft{
+	float: left;
+}
+
+.linkcontentRight{
+	float: left;
+}
+
 
 
