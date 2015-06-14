@@ -195,6 +195,12 @@ h2 {
     padding-left: 2px;
 }
 
+.click{
+	color: #4CE6E6;
+  	text-decoration: none;
+  	cursor: pointer;
+}
+
 #topbox {
   background: #333;
   padding: 10px 0 10px 0;
