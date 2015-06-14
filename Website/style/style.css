@@ -247,14 +247,24 @@ h2 {
 	text-decoration: underline;
 }
 
-#passbildContent{
+.linkContent{
 	width: 100%;
-
 }
 
-#passbildContent td{
-
+.linkContent td{
 	padding-top: 10px;
+}
+
+.focus{
+
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.slogan{
+	font-weight: bold;
+	font-size: 1.1em;
+	line-height: 140%
 }
 
 
