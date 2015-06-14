@@ -17,7 +17,28 @@ Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotow
 Unsere Leistungen:
 <br>
 <div class="click link" onclick="toggle_visibility('passbilder');" >&raquo; Passbilder</div>
-<div id="passbilder" style='display:none;'>qetqert</div>
+	<div id="passbilder" style='display:none;'>
+		<div class="linkcontent">
+			<div class="linkcontentLeft">
+				Biometrische Passbilder (4 St&uuml;ck)<br>
+				- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+			</div>	
+			<div class="linkcontentRight">
+				12,00 &euro;
+			</div>
+		</div>
+		<br>
+		<div class="linkcontent">
+			<div class="linkcontentLeft">
+				Biometrische Passbilder (6 St&uuml;ck)<br>
+				- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+			</div>	
+			<div class="linkcontentRight">
+				15,00 &euro;
+			</div>
+		</div>
+
+	</div>
 <br>
 
 
