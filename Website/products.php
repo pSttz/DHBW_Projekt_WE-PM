@@ -22,8 +22,10 @@ Unsere Leistungen:
 		<table class="linkContent">
 			<tr>
 				<td class="tableLeft">
+					<p>
 					Biometrische Passbilder (4 St&uuml;ck)<br>
 					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+					</p>
 				</td>	
 			
 				<td dir="rtl">
@@ -32,8 +34,10 @@ Unsere Leistungen:
 			</tr>
 			<tr>
 				<td class="tableLeft">
+					<p>
 					Biometrische Passbilder (6 St&uuml;ck)<br>
 					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+					<p>
 				</td>	
 				<td dir="rtl">
 					 &euro; 15,00
@@ -52,6 +56,7 @@ Unsere Leistungen:
  			</tr>
  			<tr>
  				<td class="tableleft">
+ 				<p>
  					- Dauer: 1 Stunde, inklusive Beratungsgespr&auml;ch<br>
  					- 2 verschiedene Outfits<br>
  					- Auf Wunsch auch Outdoor-Shooting<br>
@@ -61,6 +66,7 @@ Unsere Leistungen:
  					- 3 Top-Fotos werden digital optimiert und auf Wunsch in Schwarz-Wei&szlig; umgewandelt<br>
  					- kleine Hautirritationen werden wegretuschiert (z.B. Pickel, Herpesbläschen)<br>
  					- Nutzungsrechte für Facebook, Instagram und andre Social-Media-Plattformen<br>
+ 				</p>
  				</td>
  				<td dir="rtl">
 	 				&euro; 150,00 	
