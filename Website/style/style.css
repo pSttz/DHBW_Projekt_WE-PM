@@ -248,11 +248,20 @@ h2 {
 }
 
 .linkContent{
-	width: 100%;
+	width: 70%;
 }
 
 .linkContent td{
 	padding-top: 10px;
+}
+
+.tableLeft{
+	width: 75%;
+}
+
+.tableRight{
+
+	text-indent: rtl;
 }
 
 .focus{

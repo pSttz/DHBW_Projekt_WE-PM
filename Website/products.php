@@ -22,21 +22,25 @@ Unsere Leistungen:
 		<table class="linkContent">
 			<tr>
 				<td class="tableLeft">
+					<p>
 					Biometrische Passbilder (4 St&uuml;ck)<br>
 					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+					</p>
 				</td>	
 			
-				<td>
-					12,00 &euro;
+				<td dir="rtl">
+					&euro; 12,00 
 				</td>
 			</tr>
 			<tr>
 				<td class="tableLeft">
+					<p>
 					Biometrische Passbilder (6 St&uuml;ck)<br>
 					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+					<p>
 				</td>	
-				<td>
-					15,00 &euro;
+				<td dir="rtl">
+					 &euro; 15,00
 				</td>
 			</tr>
 		</table>
@@ -52,6 +56,7 @@ Unsere Leistungen:
  			</tr>
  			<tr>
  				<td class="tableleft">
+ 				<p>
  					- Dauer: 1 Stunde, inklusive Beratungsgespr&auml;ch<br>
  					- 2 verschiedene Outfits<br>
  					- Auf Wunsch auch Outdoor-Shooting<br>
@@ -61,16 +66,17 @@ Unsere Leistungen:
  					- 3 Top-Fotos werden digital optimiert und auf Wunsch in Schwarz-Wei&szlig; umgewandelt<br>
  					- kleine Hautirritationen werden wegretuschiert (z.B. Pickel, Herpesbläschen)<br>
  					- Nutzungsrechte für Facebook, Instagram und andre Social-Media-Plattformen<br>
+ 				</p>
  				</td>
- 				<td>
-	 				150,00 &euro;	
+ 				<td dir="rtl">
+	 				&euro; 150,00 	
  				</td>
  			</tr>
- 			<tr>
+ 			<tr colspan="2">
  				<td class="focus">Gro&szlig;es Fotoshooting</td>
  			</tr>
  			<tr>
- 				<td class="tableleft">
+ 				<td class="tableLeft">
  					- Dauer: 2 Stunden, inklusive Beratungsgespr&auml;ch<br>
  					- 4 verschiedene Outfits<br>
  					- Auf Wunsch auch Outdoor-Shooting<br>
@@ -81,7 +87,9 @@ Unsere Leistungen:
  					- kleine Hautirritationen werden Wegretuschiert (z.B. Pickel, Herpesbläschen)<br>
  					- Nutzungsrechte für Facebook, Instagram und andere Social-Media-Plattformen<br>
  				</td>
- 				<td>250,00 &euro;</td>
+ 				<td dir="rtl">
+ 					&euro; 250,00
+ 				</td>
  			</tr>
  		</table>
 
@@ -97,14 +105,16 @@ Unsere Leistungen:
  			</tr>
  			<tr>
  				
- 				<td class="tableleft">
+ 				<td class="tableLeft">
  					- 8 Stunden Eventfotografie, inklusive aller Fotos auf DVD<br>
  					- Reportage, ca. 1.500 Fotos<br>
  					- inklusive 50 High-End-Fotobearbeitungen von 25 Motiven<br>
  					- Anreise bis zu 50km ab meinem Studio frei, danach 0,95 &euro; pro Kilometer<br>
  					- Verlängerungsstunde: 150,00 &euro;<br>
  				</td>
- 				<td>1.500,00 &euro;</td>
+ 				<td dir="rtl">
+ 					&euro; 1.500,00
+ 				</td>
  			</tr>
  		</table>
 
