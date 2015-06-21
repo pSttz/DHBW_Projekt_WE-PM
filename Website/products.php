@@ -24,9 +24,8 @@ Unsere Leistungen:
 		<table class="linkContent">
 			<tr>
 				<td class="tableLeft">
-					<p>
-					Biometrische Passbilder (4 St&uuml;ck)<br>
-					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
+					<p class="focus">Biometrische Passbilder (4 St&uuml;ck)</p>
+					<p>- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
 					</p>
 				</td>	
 			
@@ -36,10 +35,8 @@ Unsere Leistungen:
 			</tr>
 			<tr>
 				<td class="tableLeft">
-					<p>
-					Biometrische Passbilder (6 St&uuml;ck)<br>
-					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
-					<p>
+					<p class="focus">Biometrische Passbilder (6 St&uuml;ck)</p>
+					<p>- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch</p>
 				</td>	
 				<td class="prize" dir="rtl">
 					 &euro; 15,00
