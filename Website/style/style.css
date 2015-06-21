@@ -24,16 +24,30 @@ h2 {
 /*-------------------------- Menu -----------------------------*/
 
 .flexparent {
-	display: flex;
+	display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;     
+	display: -webkit-flex;     
+	display: flex; 
 }
 
 .flexpage {
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 
 .flexmenu {
+	-webkit-flex-direction: row;
 	flex-direction: row;
-	justify-content: center;	
+	
+	-webkit-justify-content:space-between;	
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	
+	width:800px;
 	background-color: white;
 	box-shadow: rgba(0, 0, 0, 0.246094) 0px 4px 5px;
 }
@@ -48,6 +62,8 @@ h2 {
 	font-size: 2em;
 	text-align: center;
 	color: #363636;	
+	margin:0px;
+	padding:0px;
 }
 
 .menuitem a:link,
@@ -277,3 +293,69 @@ h2 {
 }
 
 
+/*-------------------------- Contact -----------------------------*/
+
+#aboutus
+{
+	width:100%;
+	table-layout:fixed;
+	margin:0px;
+	padding:0px;
+	border:none;
+	
+}
+
+#aboutus td
+{
+	vertical-align:top;
+}
+
+#mailform
+{
+	width:320px;
+	border-radius:6px;
+	background-color:#555555;
+	position:relative;
+	margin: 30px auto;
+	padding:10px;
+}
+
+#mailform h3
+{
+	text-align:center;
+}
+#mailform h4
+{
+	margin:2px 6px;
+}
+
+#mailform input 
+{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:6px 0;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+}
+#mailform textarea 
+{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:6px 0;
+	max-width:100%;
+	min-width:100%;
+	min-height:120px;
+	max-height:180px;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+}
+#mailform input:focus
+{
+	box-shadow:0 0 2px 2px #4CE6E6;
+}
