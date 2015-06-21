@@ -16,7 +16,9 @@
 Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotowünsche umgesetzt.
 Unsere Leistungen:
 <br>
-<div class="click link" onclick="toggle_visibility('passbilder');" >&raquo; Passbilder</div>
+<br>
+<div class="product">
+<div  onclick="toggle_visibility('passbilder');" ><a class="productlink">&raquo; Passbilder</a></div>
 	<div id="passbilder" style='display:none;'>
 		
 		<table class="linkContent">
@@ -28,7 +30,7 @@ Unsere Leistungen:
 					</p>
 				</td>	
 			
-				<td dir="rtl">
+				<td class="prize" dir="rtl">
 					&euro; 12,00 
 				</td>
 			</tr>
@@ -39,16 +41,17 @@ Unsere Leistungen:
 					- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch
 					<p>
 				</td>	
-				<td dir="rtl">
+				<td class="prize" dir="rtl">
 					 &euro; 15,00
 				</td>
 			</tr>
 		</table>
 	</div>
+	</div>
 	
 <br>
-
-<div class="click link" onclick="toggle_visibility('fotoshootings');">&raquo; Fotoshootings</div>
+<div class="product">
+<div onclick="toggle_visibility('fotoshootings');"><a class="productlink">&raquo; Fotoshootings</a></div>
   	<div id="fotoshootings" style="display:none;">
  		<table class="linkContent">
  			<tr colspan="2">
@@ -68,8 +71,8 @@ Unsere Leistungen:
  					- Nutzungsrechte für Facebook, Instagram und andre Social-Media-Plattformen<br>
  				</p>
  				</td>
- 				<td dir="rtl">
-	 				&euro; 150,00 	
+ 				<td class="prize">
+	 				150,00 &euro; 
  				</td>
  			</tr>
  			<tr colspan="2">
@@ -87,17 +90,19 @@ Unsere Leistungen:
  					- kleine Hautirritationen werden Wegretuschiert (z.B. Pickel, Herpesbläschen)<br>
  					- Nutzungsrechte für Facebook, Instagram und andere Social-Media-Plattformen<br>
  				</td>
- 				<td dir="rtl">
- 					&euro; 250,00
+ 				<td class="prize">
+ 					250,00 &euro; 
  				</td>
  			</tr>
  		</table>
 
 
  	</div>
+ 	</div>
 <br>
 
-<div class="click link" onclick="toggle_visibility('eventfoto');">&raquo; Eventfotografie</div>
+<div class="product">
+<div onclick="toggle_visibility('eventfoto');"><a class="productlink">&raquo; Eventfotografie</a></div>
 	<div id="eventfoto" style="display: none;">
  		<table class="linkContent">
  			<tr colspan="2">
@@ -112,26 +117,28 @@ Unsere Leistungen:
  					- Anreise bis zu 50km ab meinem Studio frei, danach 0,95 &euro; pro Kilometer<br>
  					- Verlängerungsstunde: 150,00 &euro;<br>
  				</td>
- 				<td dir="rtl">
- 					&euro; 1.500,00
+ 				<td class="prize">
+ 					1.500,00 &euro;
  				</td>
  			</tr>
  		</table>
 
 	</div>
+</div>
 
 <br>
-
-<form action="download.php?file=skymap_fotostudio.pdf" method="POST">
-   <p>Unsere gesamte Preisliste können Sie sich auch gerne im PDF-Format heruntertladen<br>
-   	<input type="submit" value="Download">
-   </p>
-
+<form target="_blank" class="productbuttons" action="download.php?file=skymap_fotostudio.pdf" method="POST">
+   	<input type="submit" value="Preisliste PDF-Flyer">
 </form>
+<form class="productbuttons"action="?p=contact" method="POST">
+   	<input   type="submit" value="Kontaktieren">
+</form>
+
 <h3>Business-Kunden</h3>
 <p class="slogan">Zeit für ein neues Image? Wir bieten Ihnen profesionelle Hilfe bei der Gestaltung von Medien für Ihr Unternehmen.<br>
 Bitte kontaktieren Sie uns und wir werden gemeinsam Ihre Ziele und W&uuml;nsche umsetzen.
 </p>
-<h2>Fotoservice</h2>
-
+<form class="productbuttons"action="?p=contact" method="POST">
+   	<input   type="submit" value="Kontaktieren">
+</form>
 

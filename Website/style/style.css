@@ -213,73 +213,33 @@ h2 {
     padding-left: 2px;
 }
 
-.click{
-	color: #4CE6E6;
-  	text-decoration: none;
-  	cursor: pointer;
-}
-
-#topbox {
-  background: #333;
-  padding: 10px 0 10px 0;
-  text-align: left;
-  height: 29px;
-  overflow: hidden;
-  cursor: pointer;
-  -webkit-transition: height 0.5s linear;
-  -moz-transition: height 0.5s linear;
-  transition: height 0.5s linear;
-}
-#topbox a {
-  color: #4CE6E6;
-  text-decoration: none;
-}
-#topbox a:hover {
-  opacity: 1;
-
-}
- 
-#tophiddenbox {
-  display: block;
-  width: 100%;
-  background: #333;
-  text-align: left;
-}
-#tophiddenbox a {
-  color: #fff;
-  text-decoration: none;
-  opacity: 0.5;
-  text-shadow: none;
-}
-#tophiddenbox a:hover { opacity: 1; }
- 
-#topbox:hover { height: 100px; }
-
-
-
-
 
 /*-------------------------- Products -----------------------------*/
 
-.link:hover{
-	text-decoration: underline;
+.productlink{
+	color: #4CE6E6;
+  	cursor: pointer;
+  	text-decoration: none;
+	text-shadow: none;
+}
+
+
+.productlink:hover{
+	color: #fff;
+	text-shadow: -1px 1px 8px #4CE6E6, 1px -1px 8px #4CE6E6;
 }
 
 .linkContent{
-	width: 70%;
+	width: 100%;
 }
 
 .linkContent td{
 	padding-top: 10px;
+
 }
 
 .tableLeft{
 	width: 75%;
-}
-
-.tableRight{
-
-	text-indent: rtl;
 }
 
 .focus{
@@ -292,6 +252,41 @@ h2 {
 	font-weight: bold;
 	font-size: 1.1em;
 	line-height: 140%
+}
+
+.prize{
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #4CE6E6;
+	text-align: center;
+}
+
+.productbuttons{
+		display: inline-block;
+}
+.productbuttons input[type=submit]{
+
+	width:200px;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin-right: 20px;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+	background:white;
+	cursor:pointer;
+}
+
+.productbuttons input:hover{
+	box-shadow:0 0 2px 2px #4CE6E6;
+}
+
+.product{
+	width:75%;
+	border-radius:6px;
+	background-color:#555555;
+	padding:10px;
 }
 
 
