@@ -6,7 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>SKYMAP-Photography</title>
+	<?php
+	header('Content-Type: text/html; charset=UTF-8');
+	?>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
