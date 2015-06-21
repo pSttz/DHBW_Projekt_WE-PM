@@ -330,8 +330,16 @@ h2 {
 {
 	margin:2px 6px;
 }
+#mailform a
+{
+	color:white;
+}
+#mailform a:hover
+{
+	color:#4CE6E6;
+}
 
-#mailform input 
+#mailform input[type="text"]
 {
 	width:100%;
 	padding:6px;
@@ -341,6 +349,20 @@ h2 {
 	border:1px solid gray;
 	margin:6px 0;
 	font-family:'Roboto', Arial, Helvetica, sans-serif;
+}
+
+#mailform input[type="button"]
+{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:12px 0;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+	background:white;
+	cursor:pointer;
 }
 #mailform textarea 
 {
@@ -357,7 +379,10 @@ h2 {
 	max-height:180px;
 	font-family:'Roboto', Arial, Helvetica, sans-serif;
 }
-#mailform input:focus
+#mailform input:hover,
+#mailform input:focus, 
+#mailform textarea:hover, 
+#mailform textarea:focus
 {
 	box-shadow:0 0 2px 2px #4CE6E6;
 }
