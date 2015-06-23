@@ -403,3 +403,6 @@ h2 {
 	text-decoration: underline;
 }
 
+.corner{
+	border-radius: 6px;
+}
