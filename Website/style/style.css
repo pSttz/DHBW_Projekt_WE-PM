@@ -217,16 +217,20 @@ h2 {
 /*-------------------------- Products -----------------------------*/
 
 .productlink{
-	color: #4CE6E6;
+	color: #fff;
   	cursor: pointer;
   	text-decoration: none;
-	text-shadow: none;
 }
 
 
 .productlink:hover{
-	color: #fff;
-	text-shadow: -1px 1px 8px #4CE6E6, 1px -1px 8px #4CE6E6;
+	-webkit-transition: all .3s ease-in-out; 
+	 -moz-transition: all .3s ease-in-out; 
+	 -o-transition: all .3s ease-in-out; 
+	 -ms-transition: all .3s ease-in-out; 
+	 transition: all .3s ease-in-out;
+	color: #4CE6E6;
+	cursor: pointer;
 }
 
 .linkContent{
@@ -235,6 +239,7 @@ h2 {
 
 .linkContent td{
 	padding-top: 10px;
+	vertical-align: top;
 
 }
 
@@ -283,7 +288,7 @@ h2 {
 }
 
 .product{
-	width:75%;
+	width:100%;
 	border-radius:6px;
 	background-color:#555555;
 	padding:10px;
