@@ -381,3 +381,20 @@ h2 {
 {
 	box-shadow:0 0 2px 2px #4CE6E6;
 }
+
+
+/*----------------------------------------------------Home-----------------------------------------*/
+
+
+.undecorated{
+
+	text-decoration: none;
+	color: #4CE6E6;
+	font-size: 25px;
+	font-weight: bold;
+
+}
+.undecorated:hover{
+	text-decoration: underline;
+}
+

@@ -11,8 +11,8 @@
 		    <td>
 		   		<h4> Sie finden uns auch auf</h4>
 		   		<a href="https://www.facebook.com/skymap.photography"><img src="images/social_media/facebook.png" alt="facebook" width="70%"></a><br>
-		    	<a class="undecorated" href=""><img src="images/social_media/instagram.png" width="19%">Folgt uns auf Instagram</a>
-		    	----- hier: Facebook, Twitter & Co
+		    	<a class="undecorated" href=""><img src="images/social_media/instagram.png" width="19%"> Instagram</a><br>
+		    	
 		    </td>
 		</tr>
 
