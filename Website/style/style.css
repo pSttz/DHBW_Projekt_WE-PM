@@ -300,7 +300,6 @@ h2 {
 	border-radius:6px;
 	background-color:#555555;
 	position:relative;
-	margin: 30px auto;
 	padding:10px;
 }
 #order input[type="text"]
@@ -349,6 +348,7 @@ h2 {
 #product td{
 	vertical-align: text-top;
 	padding: 10px;
+	padding-bottom: 1px;
 }
 /*-------------------------- Contact -----------------------------*/
 
