@@ -11,14 +11,13 @@
 </script>
 
 <h1>Angebote</h1>
-<h2>Fotostudio</h2>
 <h3>Privat-Kunden</h3>
 Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotowünsche umgesetzt.
 Unsere Leistungen:
 <br>
 <br>
 <div class="product">
-<div  onclick="toggle_visibility('passbilder');" ><a class="productlink">&raquo; Passbilder</a></div>
+<div  onclick="toggle_visibility('passbilder');" class="productlink">&raquo; Passbilder</div>
 	<div id="passbilder" style='display:none;'>
 		
 		<table class="linkContent">
@@ -30,7 +29,7 @@ Unsere Leistungen:
 				</td>	
 			
 				<td class="prize" dir="rtl">
-					&euro; 12,00 
+					<p>&euro; 12,00 </p>
 				</td>
 			</tr>
 			<tr>
@@ -39,7 +38,7 @@ Unsere Leistungen:
 					<p>- Dauer: 15-20 Minuten, inklusive kurzem Beratungsgespr&auml;ch</p>
 				</td>	
 				<td class="prize" dir="rtl">
-					 &euro; 15,00
+					 <p>&euro; 15,00</p>
 				</td>
 			</tr>
 		</table>
@@ -48,7 +47,7 @@ Unsere Leistungen:
 	
 <br>
 <div class="product">
-<div onclick="toggle_visibility('fotoshootings');"><a class="productlink">&raquo; Fotoshootings</a></div>
+<div onclick="toggle_visibility('fotoshootings');" class="productlink">&raquo; Fotoshootings</div>
   	<div id="fotoshootings" style="display:none;">
  		<table class="linkContent">
  			<tr colspan="2">
@@ -69,7 +68,7 @@ Unsere Leistungen:
  				</p>
  				</td>
  				<td class="prize">
-	 				150,00 &euro; 
+	 				<p>150,00 &euro;</p>
  				</td>
  			</tr>
  			<tr colspan="2">
@@ -88,7 +87,7 @@ Unsere Leistungen:
  					- Nutzungsrechte für Facebook, Instagram und andere Social-Media-Plattformen<br>
  				</td>
  				<td class="prize">
- 					250,00 &euro; 
+ 					<p>250,00 &euro; </p>
  				</td>
  			</tr>
  		</table>
@@ -99,7 +98,7 @@ Unsere Leistungen:
 <br>
 
 <div class="product">
-<div onclick="toggle_visibility('eventfoto');"><a class="productlink">&raquo; Eventfotografie</a></div>
+<div onclick="toggle_visibility('eventfoto');" class="productlink">&raquo; Eventfotografie</div>
 	<div id="eventfoto" style="display: none;">
  		<table class="linkContent">
  			<tr colspan="2">
@@ -115,7 +114,7 @@ Unsere Leistungen:
  					- Verlängerungsstunde: 150,00 &euro;<br>
  				</td>
  				<td class="prize">
- 					1.500,00 &euro;
+ 					<p>1.500,00 &euro;</p>
  				</td>
  			</tr>
  		</table>

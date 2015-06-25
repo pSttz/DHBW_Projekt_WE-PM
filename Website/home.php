@@ -10,9 +10,10 @@
 		    </td>
 		    <td>
 		   		<h4> Sie finden uns auch auf</h4>
-		   		<a href="https://www.facebook.com/skymap.photography"><img src="images/social_media/facebook.png" alt="facebook" width="70%"></a><br>
-		    	<a class="undecorated" href=""><img src="images/social_media/instagram.png" width="19%">Folgt uns auf Instagram</a>
-		    	----- hier: Facebook, Twitter & Co
+		   		<a href="https://www.facebook.com/skymap.photography" target="_blank"><img class="corner" src="images/social_media/facebook.png" title="Facebook" width="30%"></a>
+		    	<a href="https://twitter.com/SkymapPhoto" target="_blank"><img class="corner" src="images/social_media/twitter.png" width="30%" title="Twitter"></a>
+		    	<a href="https://instagram.com/skymapphoto/" target="_blank"><img class="corner" src="images/social_media/instagram.png" width="30%" title="Instagram"></a>
+		    	
 		    </td>
 		</tr>
 
