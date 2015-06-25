@@ -9,11 +9,17 @@
     }
 //-->
 </script>
-
+<table id="product" >
+<tr>
+<td colspan="2">
 <h1>Angebote</h1>
-<h3>Privat-Kunden</h3>
-Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotowünsche umgesetzt.
-Unsere Leistungen:
+</td>
+</tr>
+<tr>
+<td width="70%">	
+<h2>Fotostudio</h2>
+<p class="slogan">Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotowünsche umgesetzt.
+Unsere Leistungen:</p>
 <br>
 <br>
 <div class="product">
@@ -129,12 +135,36 @@ Unsere Leistungen:
 <form class="productbuttons"action="?p=contact" method="POST">
    	<input   type="submit" value="Kontaktieren">
 </form>
-
+<!--
 <h3>Business-Kunden</h3>
 <p class="slogan">Zeit für ein neues Image? Wir bieten Ihnen profesionelle Hilfe bei der Gestaltung von Medien für Ihr Unternehmen.<br>
 Bitte kontaktieren Sie uns und wir werden gemeinsam Ihre Ziele und W&uuml;nsche umsetzen.
 </p>
 <form class="productbuttons"action="?p=contact" method="POST">
    	<input   type="submit" value="Kontaktieren">
-</form>
 
+</form>
+-->
+</td>
+<td>
+<h2>Bestellungen</h2>
+<p class="slogan">Sollten Sie sich noch nicht sicher sein, testen Sie eines unserer drei kostenlosen Produkten. Wir liefern sie direkt zu Ihnen nach Hause!</p>
+<div id="order">
+	<form method="POST" >
+		<h4>Vorname:</h4><input type="text" name="name" placeholder="Max" onblur="validateInput(this)">
+		<h4>Nachname:</h4><input type="text" name="surname" placeholder="Mustermann">
+		<h4>Adresse:</h4><input type="text" name="street" placeholder="Musterstraße 12">
+		<h4>Postleitzahl:</h4><input type="text" name="pCode" placeholder="12345">
+		<h4>Ort:</h4><input type="text" name="town" placeholder="Musterstadt">
+		<h4>Produkte:</h4><select size="1" name="product">
+			<option>Produkt 1</option>
+			<option>Produkt 2</option>
+			<option>Produkt 3</option>
+		</select>
+		<input type="button" value="Kostenlos Bestellen" name="send">
+	</form>
+
+</div>
+</td>
+</tr>
+</table>

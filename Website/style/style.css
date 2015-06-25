@@ -294,7 +294,62 @@ h2 {
 	padding:10px;
 }
 
+#order
+{
+	
+	border-radius:6px;
+	background-color:#555555;
+	position:relative;
+	margin: 30px auto;
+	padding:10px;
+}
+#order input[type="text"]
+{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:6px 0;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+}
 
+#order h4{
+	margin:2px 6px;
+
+}
+
+#order input[type="button"]{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:12px 0;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+	background:white;
+	cursor:pointer;
+}
+
+#order select{
+	width:100%;
+	padding:6px;
+	border-radius:4px;
+	border:none;
+	font-size:14px;
+	border:1px solid gray;
+	margin:12px 0;
+	font-family:'Roboto', Arial, Helvetica, sans-serif;
+	background:white;
+}
+#product{}
+
+#product td{
+	vertical-align: text-top;
+	padding: 10px;
+}
 /*-------------------------- Contact -----------------------------*/
 
 #aboutus
