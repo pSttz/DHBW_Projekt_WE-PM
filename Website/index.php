@@ -47,6 +47,9 @@
 					case 'cookie_policy':
 						include('cookie_policy.php');
 						break;
+					case 'impressum':
+						include('impressum.php');
+						break;
 					default:
 						include('home.php'); 
 				}
@@ -57,6 +60,6 @@
 	<br>
 	</div>
 </div>
-	<footer>©2015 SKYMAP Photography | <a href='?p=privacy'>Datenschutz</a> | <a href='?p=cookie_policy'>Cookies</a>  </footer>
+	<footer>©2015 SKYMAP Photography | <a href='?p=privacy'>Datenschutz</a> | <a href='?p=impressum'>Impressum</a> | <a href='?p=cookie_policy'>Cookies</a>  </footer>
 </body>
 </html>
