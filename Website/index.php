@@ -17,11 +17,11 @@
 	<script type="text/javascript" src="script/script.js"></script>
 </head>
 <body>
+<div class="page">
 	<?php
 		include('header.php');
 		include('menu.php');
 	?>
-
 	<div class="content">
 		<?php
 			if (! isset($_GET['p']))
@@ -41,19 +41,22 @@
 					case 'contact':
 						include('contact.php');
 						break; 
+					case 'privacy':
+						include('privacy.php');
+						break;
+					case 'cookie_policy':
+						include('cookie_policy.php');
+						break;
 					default:
 						include('home.php'); 
 				}
 			}
 		?>
-
-		<?php 
-			//$item = mysqli_query($content, "SELECT * FROM galerie");
-			//while($data = mysqli_fetch_array($item))
-			//{
-			//	echo($data[1]."<img src='".$data[2]."' width='100px'><br />");
-			//}
-		?>
+		<br>
+	<br>
+	<br>
 	</div>
+</div>
+	<footer>©2015 SKYMAP Photography | <a href='?p=privacy'>Datenschutz</a> | <a href='?p=cookie_policy'>Cookies</a>  </footer>
 </body>
 </html>

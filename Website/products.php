@@ -9,12 +9,8 @@
     }
 //-->
 </script>
+	<h1>Angebote</h1>
 <table id="product" >
-	<tr>
-		<td colspan="2">
-			<h1>Angebote</h1>
-		</td>
-	</tr>
 	<tr>
 		<td width="65%">	
 			<h2>Fotostudio</h2>
