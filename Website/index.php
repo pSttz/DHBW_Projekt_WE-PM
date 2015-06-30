@@ -7,6 +7,7 @@
 <html>
 <head>
 	<title>SKYMAP-Photography</title>
+	<link rel="icon" type="image/png" href="images/favicon/favicon.ico">
 	<?php
 	header('Content-Type: text/html; charset=UTF-8');
 	?>
