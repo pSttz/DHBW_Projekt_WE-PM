@@ -15,6 +15,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="script/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="script/script.js"></script>
+	<script type="text/javascript" src="script/search.js"></script>
 </head>
 <body>
 <div class="page">

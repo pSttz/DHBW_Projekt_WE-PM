@@ -313,7 +313,7 @@ h2 {
 .productbuttons{
 		display: inline-block;
 }
-.productbuttons input[type=submit]{
+input[type=submit], button {
 
 	width:200px;
 	padding:6px;
@@ -327,7 +327,7 @@ h2 {
 	cursor:pointer;
 }
 
-.productbuttons input:hover{
+input[type=submit]:hover, button:hover {
 	box-shadow:0 0 2px 2px #4CE6E6;
 }
 
@@ -338,16 +338,15 @@ h2 {
 	padding:10px;
 }
 
-#order
-{
+#order {
 	
 	border-radius:6px;
 	background-color:#555555;
 	position:relative;
 	padding:10px;
 }
-#order input[type="text"]
-{
+
+input[type="text"] {
 	width:100%;
 	padding:6px;
 	border-radius:4px;
@@ -363,7 +362,7 @@ h2 {
 
 }
 
-#order input[type="button"]{
+input[type="button"]{
 	width:100%;
 	padding:6px;
 	border-radius:4px;
@@ -377,7 +376,7 @@ h2 {
 }
 
 
-#order select{
+select {
 	width:100%;
 	padding:6px;
 	border-radius:4px;
@@ -388,14 +387,12 @@ h2 {
 	font-family:'Roboto', Arial, Helvetica, sans-serif;
 	background:white;
 }
-#order input:hover,
-#order input:focus, 
-#order textarea:hover, 
-#order textarea:focus,
-#order select:hover,
-#order select:focus
-
-{
+input[type="text"]:hover,
+input[type="text"]:focus
+textarea:hover, 
+textarea:focus,
+select:hover,
+select:focus {
 	box-shadow:0 0 2px 2px #4CE6E6;
 }
 
@@ -518,3 +515,74 @@ h2 {
 
 
 
+
+/*------------------------------- Gallery Search/Sort -------------------------------------*/
+
+#search_form {
+	margin: 10px 0 30px;
+	float: left;
+	width: 60%;
+}
+
+#search_form input[type="text"] {
+	float: left;
+	width: 300px;
+	margin: 0;
+}
+
+#search_form button {
+	width: 100px;
+}
+
+
+#sort_form {
+	margin: 10px 0 30px;
+	float: left;
+	width: 40%;
+}
+
+#sort_form label {
+	float: left;
+	margin-right: 10px;
+	line-height: 33px;
+}
+
+#sort_form select {
+	float: left;
+	width: auto;
+	margin: 0;
+}
+
+
+#result {
+	margin: 10px 0;
+}
+
+#result ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#result li {
+	float: left;
+	width: 23%;
+	margin: 0 1% 10px;
+}
+
+#result li .image {
+	width: 100%;
+	height: 150px;
+	float: left;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	margin-bottom: 10px;
+}
+
+#result li .title,
+#result li .description {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
