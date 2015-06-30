@@ -1,6 +1,7 @@
 <?php 
 
 	$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
+	$db->set_charset("utf8");
 
 	// check connection
 	if (mysqli_connect_errno()) {
@@ -46,7 +47,7 @@
 	             
 	            // put data from database into array
 	            while($results = mysqli_fetch_array($db_results)) {
-	                echo "<li><img class='image' src='images/gallery/"  . $results['href'] . "'/>";
+	                echo "<li><div class='image'><img src='images/gallery/"  . $results['href'] . "'/></div>";
 	                echo "<span class='title'><a href='"  . $results['href'] . "'>". $results['title'] . "</a></span>";
 	                echo "<span class='description'>" . $results['description'] . "</span></li>";
 	            }

@@ -1,4 +1,5 @@
 function makeSearch(query) {
+	
 	if (query.length == 0) { 
 		document.getElementById("result").innerHTML = "";
 		
@@ -32,11 +33,16 @@ function getCurrentUrl() {
     return url;
 }
 
+function getParamValue(param) {
+    param = param.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + param + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 function addParamToUrl(param, value) {
     //check if param exists
-    var param_value = new RegExp(param + "=([^&]*)", "i").exec(window.location.search);
-    param_value = param_value && param_value[1] || "";
+    var param_value = getParamValue(param);
 
     //added seperately to append ? before params
     var url = getCurrentUrl();

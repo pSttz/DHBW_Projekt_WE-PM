@@ -1,5 +1,27 @@
+function setDropdown() {
+	var current_sort = getParamValue("s");
+	var current_dir = getParamValue("dir");
+	if(current_sort != "" && current_dir != "") {
+		$("#sort_gallery").val(current_sort + "_" + current_dir);
+	}
+}
+
+function setInputValue() {
+	var current_query = getParamValue("q");
+	console.log(current_query);
+	if(current_query != "") {
+		$("#search").val(current_query);
+	}
+}
+
+function removeSort() {
+	window.location = "index.php?p=gallery";
+}
+
 function showSortResults(sort, dir, cookie_sort, cookie_dir) {
 	var search_query = getParamValue("q");
+	setDropdown();
+	setInputValue();
 
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {

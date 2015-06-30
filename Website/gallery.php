@@ -11,13 +11,13 @@
 <form id="sort_form"> 
 	<label for="sort_gallery">Sortieren nach</label>
 	<select name="sort_gallery" id="sort_gallery">
-		<option value=""></option>
+		<option value="no_sort"></option>
 		<option value="title_asc">Title: aufsteigend</option>
 		<option value="title_desc">Title: absteigend</option>
 		<option value="date_asc">Datum: aufsteigend</option>
 		<option value="date_desc">Datum: absteigend</option>
-		<option value="category">Kategorie</option>
-		<option value="rate">Bewertung</option>
+		<option value="tags_asc">Kategorie</option>
+		<option value="likes_asc">Bewertung</option>
 	</select>
 </form>
 
@@ -35,13 +35,14 @@
 		});
 
 		$('#sort_gallery').on('change', function() {
-			if(this.value == "title_asc") makeSort("title", "asc");
+			if(this.value == "no_sort") removeSort();
+			else if(this.value == "title_asc") makeSort("title", "asc");
 			else if(this.value == "title_desc") makeSort("title", "desc");
 			else if(this.value == "title_desc") makeSort("title", "desc");
 			else if(this.value == "date_asc") makeSort("date", "asc");
 			else if(this.value == "date_desc") makeSort("date", "desc");
-			else if(this.value == "category") makeSort("tags", "asc");
-			else if(this.value == "rate") makeSort("likes", "asc");
+			else if(this.value == "tags_asc") makeSort("tags", "asc");
+			else if(this.value == "likes_asc") makeSort("likes", "asc");
 			// console.log(this.value);
 		});
 
