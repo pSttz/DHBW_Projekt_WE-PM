@@ -1,5 +1,5 @@
 <h1>Impressum</h1>
-<p>Angaben gemäß § 5 TMG</p><p>Max Muster <br> 
+<p>Angaben gemäß § 5 TMG</p><p>SKYMAP Photography GmbH & Co. KG<br> 
 Musterweg<br> 
 12345 Musterstadt <br> 
 </p><p> <strong>Vertreten durch: </strong><br>

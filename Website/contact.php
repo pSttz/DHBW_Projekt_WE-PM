@@ -1,8 +1,7 @@
-﻿
+﻿<h1>Über uns & Kontakt</h1>
 <table id="aboutus">
 	<tr>
 		<td>
-			<h1>Über uns & Kontakt</h1>
 			<h3>Über SKYMAP</h3>
 			--todo text einfügen--
 			<h3>Kontakt</h3>
