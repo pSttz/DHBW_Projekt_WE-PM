@@ -618,3 +618,23 @@ select:focus {
 	float: left;
 	text-align: center;
 }
+
+/*================= newsletter ====================== */
+
+
+#newsletter 
+{
+	width:300px;
+	position:relative;
+}
+
+#newsletter input[type="text"]
+{
+	width:60%;
+	text-align:left;
+}
+#newsletter input[type="submit"]
+{
+	width:30%;
+	margin-left:4px;
+}

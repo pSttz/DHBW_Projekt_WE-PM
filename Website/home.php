@@ -20,14 +20,11 @@
 
 		<tr>
 		    <td>
-	            <p>
-	            Über 500 Kunden von Skymap Photography sprechen für sich. Steigen auch Sie noch heute ein und bestellen Sie den kostenlosen Skymap-Newsletter.<br>
-		        Dieser informiert Sie stets über aktuelle Entwicklungen und die neuesten Motvie und ist selbstverständlich jederzeit abbestellbar.<br> 
-		        Geben Sie hier ihre Mailadresse ein:</p>
-		        <form action="home.php." method="post">  
-					<input type="text" name="mail" width="300"/>
-					<input type="submit" value="Jetzt Newsletter anfordern"/>
-		        </form>
+	            
+				<?php
+				include("newsletter.php");
+				?>
+				
 		    </td> 			  	          
 		    <td>
 		    	<table>
