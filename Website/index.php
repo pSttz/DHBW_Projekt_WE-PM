@@ -7,13 +7,7 @@
 <html>
 <head>
 	<title>SKYMAP-Photography</title>
-<<<<<<< HEAD
 	<link rel="icon" type="image/png" href="images/favicon/favicon.ico">
-	<?php
-	header('Content-Type: text/html; charset=UTF-8');
-	?>
-=======
->>>>>>> origin/20150702_dev_Patrick
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
