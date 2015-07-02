@@ -1,6 +1,7 @@
 <?php 
 
 	$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
+	$db->set_charset("utf8");
 
 	// check connection
 	if (mysqli_connect_errno()) {
@@ -34,11 +35,18 @@
         $sort = mysqli_real_escape_string($db, $sort); 
         $sort_dir = mysqli_real_escape_string($db, $sort_dir); 
         
-        $db_results = mysqli_query($db, "SELECT * FROM galerie") or die(mysql_error());
-
+        // if there's a 
         if (isset($_GET['q'])) {
-        	// echo $_GET['q'];
-			// setcookie("search", $_REQUEST['q'], time() + (86400 * 30), "/"); // 86400 = 1 day
+			$db_results = mysqli_query($db, "SELECT * FROM galerie
+	            WHERE (`title` LIKE '%".$_GET['q']."%') 
+	            	OR (`id` LIKE '%".$_GET['q']."%') 
+	            	OR (replace(tags, ',', '') LIKE '%".$_GET['q']."%')") 
+	        		or die(mysql_error());
+
+			// $db_results = mysqli_query($db, "SELECT * FROM galerie") or die(mysql_error());
+        }
+        else {
+        	$db_results = mysqli_query($db, "SELECT * FROM galerie") or die(mysql_error());
         }
              
         // if one or more rows are returned 
@@ -53,12 +61,12 @@
         	// make usort on a chosen key ($sort)
         	if($sort_dir == "asc") {
         		usort($results, function($a, $b) use ($sort) { // accept regular argument $sort
-					return strcmp($a[$sort], $b[$sort]);
+					return strcmp(strtolower($a[$sort]), strtolower($b[$sort]));
 				});
         	}
         	else {
         		usort($results, function($a, $b) use ($sort) {
-					return strcmp($b[$sort], $a[$sort]);
+					return strcmp(strtolower($b[$sort]), strtolower($a[$sort]));
 				});   		
         	}
 
@@ -69,7 +77,7 @@
         	echo "<ul>";
          
             foreach($results as $result) {
-                echo "<li><div class='image' style='background-image:url(images/gallery/"  . $result['href'] . ")'></div>";
+                echo "<li><div class='image'><img src='images/gallery/"  . $result['href'] . "'/></div>";
                 echo "<div class='title'><a href='"  . $result['href'] . "'>". $result['title'] . "</a></div>";
                 echo "<div class='description'>" . $result['description'] . "</div></li>";
             }

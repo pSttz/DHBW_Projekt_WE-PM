@@ -400,15 +400,15 @@ function popover(content, className, actionType, imagesNum) {
 	var prevImageIndex = siblings[0];
 	var nextImageIndex = siblings[1];
 
-	var prevButton = '<a id="popover-prev" href="#" class="button" onClick="updatePopover('+prevImageIndex+','+imagesNum+');return false;">Previous</a>';
-	var nextButton = '<a id="popover-next" href="#" class="button" onClick="updatePopover('+nextImageIndex+','+imagesNum+');return false;">Next</a>';
+	var prevButton = '<a id="popover-prev" href="#" class="button" onClick="updatePopover('+prevImageIndex+','+imagesNum+');return false;" style="top:'+($(window).height()/2-50)+'px">Previous</a>';
+	var nextButton = '<a id="popover-next" href="#" class="button" onClick="updatePopover('+nextImageIndex+','+imagesNum+');return false;" style="top:'+($(window).height()/2-50)+'px">Next</a>';
 
 	var popoverTemplate = $('<div id="popover"><div class="popover-wrapper">'
 		+ ' <a id="popover-close" href="#" class="button" onClick="closePopover();return false;">&times;</a>'
-		+ '<div class="popover-controls"></div><div class="popover-content"></div></div></div>');
+		+ '<div class="popover-content"></div></div></div><div class="popover-controls"></div>');
 	var shadowTemplate = $('<div id="popover-shadow"/>');
 	var popover = '#popover';
-	var popoverControls = '#popover .popover-controls';
+	var popoverControls = '.popover-controls';
 	var popoverContent = '#popover .popover-content';
 	var shadow = '#popover-shadow';
 
@@ -484,7 +484,9 @@ function updatePopover(index, imagesNum) {
 function closePopover(){
 	var popover = '#popover';
 	var shadow = '#popover-shadow';
+	var popoverControls = '.popover-controls';
 	$(popover).fadeOut();
 	$(popover).remove();
 	$(shadow).remove();
+	$(popoverControls).remove();
 }
