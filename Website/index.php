@@ -49,6 +49,9 @@
 					case 'impressum':
 						include('impressum.php');
 						break;
+					case 'images':
+						include('admin/images.php');
+						break;
 					default:
 						include('home.php'); 
 				}

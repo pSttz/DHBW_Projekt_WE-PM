@@ -470,7 +470,8 @@ input[type=submit]:hover, button:hover {
 	padding:10px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	width:100%;
 	padding:6px;
 	border-radius:4px;
@@ -718,4 +719,86 @@ select:focus {
 	width: 100%;
 	float: left;
 	text-align: center;
+}
+
+
+#add_images_form {
+	margin: 20px 0;
+}
+
+#add_images_form input,
+#add_images_form label,
+#add_images_form textarea {
+	float: left;
+	width: auto;
+	margin: 0 1% 12px 0;
+	vertical-align: top;
+}
+
+#add_images_form input[type=checkbox] {
+	margin: 0
+}
+
+#add_images_form textarea {
+	padding: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#add_images_form #image-title {
+	width: 73%;
+}
+
+#add_images_form #image-href {
+	width: 25%;
+}
+
+#add_images_form .image-download {
+	width: 25%;
+	margin: 0 0 14px 0;
+	height: 31px;
+	line-height: 31px;
+}
+
+#add_images_form .image-download input {
+	height: 31px;
+	line-height: 31px;
+	margin-right: 5px;
+}
+
+#add_images_form #image-description {
+	width: 73%;
+}
+
+#add_images_form #image-tags {
+	width: 25%;
+}
+
+#add_images_form button {
+	width: 25%;
+	float: left;
+	margin: 0;
+}
+
+.alert {
+	float: left;
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.alert.success {
+	background-color: #2F9024;
+}
+
+.alert.error {
+	background-color: #B13926;
+}
+
+#login_form input {
+	width: auto;
+}
+
+#login_form input[type="submit"] {
+	width: 200px;
 }
