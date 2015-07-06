@@ -255,15 +255,25 @@ function popoverPosition(popover) {
 	var width = $(popover).children().find("img").prop("naturalWidth");
 	var height = $(popover).children().find("img").prop("naturalHeight") + 100;
 
-	if(width > 1000) {
-		var ratio = 1000 / width;
-		width = 1000;
-		height = height * ratio;
+	if(height > $(window).height()) {
+		var ratio = $(window).height() / height;
+		height = $(window).height();
+		width = width * ratio;
 	}
 	else if(height > 700) {
 		var ratio = 700 / height;
 		height = 700;
 		width = width * ratio;
+	}
+	else if(width > $(window).width()) {
+		var ratio = $(window).width() / width;
+		width = $(window).width();
+		width = width * ratio;
+	}
+	else if(width > 1000) {
+		var ratio = 1000 / width;
+		width = 1000;
+		height = height * ratio;
 	}
 
 	var top = ( $(window).height() - height ) / 2  + "px";
