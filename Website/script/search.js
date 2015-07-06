@@ -1,5 +1,12 @@
+function setInputValue() {
+	var current_query = getParamValue("q");
+	if(current_query != "") {
+		$("#search").val(current_query);
+	}
+}
+
+
 function makeSearch(query) {
-	
 	if (query.length == 0) { 
 		document.getElementById("result").innerHTML = "";
 		
@@ -10,15 +17,13 @@ function makeSearch(query) {
 		return;
 	} 
 	else {
+		setInputValue();
+
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				$(".gallery").empty();
 				document.getElementById("result").innerHTML = xmlhttp.responseText;
-				
-				// var url = getCurrentUrl();
-				// window.history.pushState("", "", removeAllParamsFromUrl(url)); 
-
 				addParamToUrl('q', query);
 			}
 		}

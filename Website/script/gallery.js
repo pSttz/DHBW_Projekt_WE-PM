@@ -2,7 +2,6 @@ var blocks = {};
 var ratio = 1;
 var topLevel = 0;
 
-
 function isEven(value) {
 	if (value % 2 == 0) return true;
 	else return false;
@@ -160,12 +159,163 @@ function setCss(blockLevel, block, width, height) {
 		"height": height,
 		"padding": padding
 	});	
+
+	$(block).attr("data-height", height);
 }
 
 
-$(document).ready(function(){
-	
-	var gallery = $(".gallery");
+function popover(content, className, actionType) {
+	var siblings = getSiblingsIndex(className);
+	var prevImageIndex = siblings[0];
+	var nextImageIndex = siblings[1];
+
+	var prevButton = '<a id="popover-prev" href="#" class="button" onClick="updatePopover('+prevImageIndex+');return false;" style="top:'+($(window).height()/2-50)+'px">Previous</a>';
+	var nextButton = '<a id="popover-next" href="#" class="button" onClick="updatePopover('+nextImageIndex+');return false;" style="top:'+($(window).height()/2-50)+'px">Next</a>';
+
+	var popoverTemplate = $('<div id="popover"><div class="popover-wrapper">'
+		+ ' <a id="popover-close" href="#" class="button" onClick="closePopover();return false;">&times;</a>'
+		+ '<div class="popover-info-top"></div><div class="popover-content"></div><div class="popover-info-bottom"></div></div></div><div class="popover-controls"></div>');
+	var shadowTemplate = $('<div id="popover-shadow"/>');
+	var popover = '#popover';
+	var popoverControls = '.popover-controls';
+	var popoverContent = '#popover .popover-content';
+	var popoverInfoTop = '#popover .popover-info-top';
+	var popoverInfoBottom = '#popover .popover-info-bottom';
+	var shadow = '#popover-shadow';
+
+	// add popover/shadow divs if not added
+	if($(popover).size() == 0) {
+		$('body').append(shadowTemplate);
+		$('body').append(popoverTemplate);	
+	}
+
+	$(shadow).click(function(e){
+		closePopover();
+	});
+
+	if(actionType == "update") {
+		$(popoverControls).empty();
+		$(popoverContent).empty();	
+		$(popoverInfoTop).empty();
+		$(popoverInfoBottom).empty();	
+	}
+
+	// insert HTML content
+	if(content != null){
+		if(prevImageIndex != -1) $(popoverControls).append(prevButton);
+		if(nextImageIndex >= 0) $(popoverControls).append(nextButton);	
+
+		var imageDate = content.attr("data-date");
+		var imageDescription = content.attr("data-description");
+		var imageLikes = content.attr("data-likes");
+		var imageTitle = content.attr("title");
+		var imageId = content.attr("data-id");
+
+		var date = new Date(imageDate);
+		var day = date.getDate();
+		var monthIndex = date.getMonth();
+		var year = date.getFullYear();
+		var monthNames = [
+			"Januar", "Februar", "März",
+			"April", "Mai", "Juni", "Juli",
+			"August", "September", "Oktober",
+			"November", "Dezember"
+		];
+		var humanDate = day + ". " + monthNames[monthIndex] + " " + year;
+
+		var likeExists = false;
+		var cookie = getCookie("likes").split(",");
+		for(i = 0; i < cookie.length; i++) {
+			if(cookie[i] == imageId) {
+				likeExists = true;
+				break;
+			}
+		}
+
+		$(popoverContent).append(content);	
+		$(popoverInfoTop).append("<div class='image-title'>" + imageTitle + "</div>");
+		$(popoverInfoBottom).append("<div class='image-description'>" + imageDescription + "</div>");
+		$(popoverInfoBottom).append("<div class='image-date'>Hinzugefügt am " + humanDate + "</div> | ");	
+		$(popoverInfoBottom).append("<div class='image-likes' id='image-"+imageId+"'>Gefällt mir <span class='" + (likeExists ? 'liked' : '') +"'>" + imageLikes + "</span></div>");
+		
+	}
+
+	// set the popover size and position
+	popoverPosition(popover);
+
+	if(actionType == "show") {
+		// display the popover
+		$(popover).fadeIn();
+		$(shadow).show();
+	}
+}
+
+
+function popoverPosition(popover) {
+	var width = $(popover).children().find("img").prop("naturalWidth");
+	var height = $(popover).children().find("img").prop("naturalHeight") + 100;
+
+	if(width > 1000) {
+		var ratio = 1000 / width;
+		width = 1000;
+		height = height * ratio;
+	}
+	else if(height > 700) {
+		var ratio = 700 / height;
+		height = 700;
+		width = width * ratio;
+	}
+
+	var top = ( $(window).height() - height ) / 2  + "px";
+	var left = ( $(window).width() - width ) / 2 + "px";
+	$(popover).css({
+		'width' : width,
+		'height' : height,
+		'top' : top,
+		'left' : left
+	});
+}
+
+
+function getSiblingsIndex(className) {
+	var classes = className.split(' ');
+	var index, indexPrev, indexNext;
+	for (var index in classes) {
+        if (classes[index].match(/^block\d+$/)) {
+            index = parseInt(classes[index].match(/\d+/)[0]);
+            break;
+        }
+    }
+    indexPrev = (index != 0) ? index-1 : -1;
+    if($(".level0.block" + (index+1)).length !=0 ) 	indexNext = index+1;
+    else 											indexNext = 0;
+
+    return [indexPrev, indexNext];
+}
+
+
+function updatePopover(index) {
+	var nextLink = $(document).find("a.block" + (parseInt(index)));
+	var image = nextLink.children("img").clone(true);
+	var nextImageClass = nextLink.attr("class");
+	popover(image, nextImageClass, "update");
+	return false;
+}
+
+
+function closePopover(){
+	var popover = '#popover';
+	var shadow = '#popover-shadow';
+	var popoverControls = '.popover-controls';
+	$(popover).fadeOut();
+	$(popover).remove();
+	$(shadow).remove();
+	$(popoverControls).remove();
+}
+
+
+function makeGallery(galleryClass) {
+	var gallery = $(galleryClass);
 	var galleryWidth = gallery.width();
 	//clone images from DOM to use them later
 	var images = gallery.children().clone(true);
@@ -211,6 +361,7 @@ $(document).ready(function(){
 		divideBlocks(currentLevel, 0, width1, width2, height1, height2, "horizontal");
 	}
 
+	// console.log(images);
 	// console.log(JSON.stringify(blocks));
 	// console.log(images);
 
@@ -261,19 +412,21 @@ $(document).ready(function(){
 				var link = document.createElement('a');
 				link.setAttribute('href', images.eq(blockIndex).prop("src"));
 				link.setAttribute('class', "tiles-item level"+ blockLevel +" block" + blockIndex + " tiles-image popover");
+				// link.setAttribute('data-date', images.eq(blockIndex).data("date"));
 
 				// get an image
 				var image = images.eq(blockIndex)[0];
 
-				// if the image has a title - transform it to span
-				// var titleText = $(image).attr("title");
-				// if(titleText != "") {
-				// 	var title = document.createElement('span');
-				// 	title.setAttribute('class', "desciption");
-				// 	title.innerText = titleText;
-				// 	$(image).removeAttr('title');
-				// 	link.appendChild(title);
-				// }
+				// append additional information
+				var likesCount = $(image).data("likes");
+				if(likesCount > 0) {
+					var likes = document.createElement('span');
+					var likesInner = document.createElement('span');
+					likes.setAttribute('class', "likes");
+					likesInner.innerText = likesCount;
+					link.appendChild(likes);
+					likes.appendChild(likesInner);
+				}
 				
 				link.appendChild(image);
 				var block = $(link);
@@ -316,10 +469,20 @@ $(document).ready(function(){
 				// set top-level block width equal to parent (gallery) width
 				// and calculate the height depending on the ratio
 				ratio = parent.width() / object["width"];
-				block.css({
-					"width": parent.width(),
-					"height": object["height"] * ratio
-				});
+				var newWidth = parent.width();
+
+				// var newHeight = object["height"] * ratio;
+				var children = object["children"].split(',');
+				var newHeight = 0;
+				for(var childIndex = 0; childIndex < children.length; childIndex++) {
+					newHeight += blocks['level' + (blockLevel-1)]["block" + childIndex];
+				}
+
+				if(newHeight == 0) newHeight = object["height"] * ratio;
+				else newHeight = newHeight * ratio;
+
+				// $(block).attr("data-orig-height", object["height"]);
+				setCss(blockLevel, block, newWidth, newHeight);
 			}
 			else {
 				// divide type is horizontal
@@ -384,109 +547,80 @@ $(document).ready(function(){
 			// append the prepared block to DOM
 			parent.append(block);
 		}
+	}	
+}
+
+function sendLike(id) {
+	var likeExists = false;
+	var cookie = getCookie("likes").split(",");
+	for(i = 0; i < cookie.length; i++) {
+		if(cookie[i] == id) {
+			likeExists = true;
+			break;
+		}
 	}
+	if(!likeExists) updateLikes(id);
+	return false;
+}
+
+function updateLikes(id) {
+	$.ajax({
+        type: "GET",
+        url: "likes.php",
+        dataType: 'html',
+        data: ({ id: id }),
+        success: function(data) {
+            appendCookie("likes", id, 365);
+            var prevLikes = parseInt($("#image-"+id + " span").html());
+            $("#image-" + id + " span").html(prevLikes+1);
+            $("#image-" + id + " span").addClass("liked");
+            $('*[data-id="'+ id +'"]').attr("data-likes", (prevLikes+1));
+            $('*[data-id="'+ id +'"]').prev("span").children("span").html(prevLikes+1);
+
+        }
+    });
+}
 
 
-	$(".popover").click(function() {
-		popover('<img src="'+$(this).attr("href")+'"/>', $(this).attr("class"), "show", imagesTotalNum);
+$(document).ready(function() {
+	$('body').on('click', '.popover', function() {
+		var image = $(this).children("img").clone(true);
+		var className = $(this).attr("class");
+		popover(image, className, "show");
 		return false;
+	});
+
+	$('#search_form').submit(function(e) {   
+		makeSearch($(this).children('#search').val());
+		e.preventDefault(); 
+	});
+
+	$('#search_button').click(function(e) {   
+		makeSearch($(this).siblings('#search').val());
+	});
+
+	$('#sort_gallery').on('change', function() {
+		if(this.value == "no_sort") 		removeSort();
+		else if(this.value == "title_asc") 	makeSort("title", "asc");
+		else if(this.value == "title_desc") makeSort("title", "desc");
+		else if(this.value == "title_desc") makeSort("title", "desc");
+		else if(this.value == "date_asc") 	makeSort("date", "asc");
+		else if(this.value == "date_desc") 	makeSort("date", "desc");
+		else if(this.value == "tags_asc") 	makeSort("tags", "asc");
+		else if(this.value == "likes_asc") 	makeSort("likes", "asc");
+	});
+
+	$('body').on('click', '.image-likes', function() {
+		sendLike($(this).prop("id").split('-')[1]);
 	});
 });
 
 
 
-function popover(content, className, actionType, imagesNum) {
-	var siblings = getSiblingsIndex(className, imagesNum);
-	var prevImageIndex = siblings[0];
-	var nextImageIndex = siblings[1];
-
-	var prevButton = '<a id="popover-prev" href="#" class="button" onClick="updatePopover('+prevImageIndex+','+imagesNum+');return false;" style="top:'+($(window).height()/2-50)+'px">Previous</a>';
-	var nextButton = '<a id="popover-next" href="#" class="button" onClick="updatePopover('+nextImageIndex+','+imagesNum+');return false;" style="top:'+($(window).height()/2-50)+'px">Next</a>';
-
-	var popoverTemplate = $('<div id="popover"><div class="popover-wrapper">'
-		+ ' <a id="popover-close" href="#" class="button" onClick="closePopover();return false;">&times;</a>'
-		+ '<div class="popover-content"></div></div></div><div class="popover-controls"></div>');
-	var shadowTemplate = $('<div id="popover-shadow"/>');
-	var popover = '#popover';
-	var popoverControls = '.popover-controls';
-	var popoverContent = '#popover .popover-content';
-	var shadow = '#popover-shadow';
-
-	// add popover/shadow divs if not added
-	if($(popover).size() == 0) {
-		$('body').append(shadowTemplate);
-		$('body').append(popoverTemplate);	
+$(window).load(function() {
+	if($(".gallery").length != 0) {
+		$(".gallery").removeClass("loading");
+		$(".loader").hide();
+		makeGallery(".gallery");
 	}
-
-	$(shadow).click(function(e){
-		closePopover();
-	});
-
-	if(actionType == "update") {
-		$(popoverControls).empty();
-		$(popoverContent).empty();	
-	}
-
-	// insert HTML content
-	if(content != null){
-		if(prevImageIndex != -1) $(popoverControls).append(prevButton);
-		if(nextImageIndex >= 0) $(popoverControls).append(nextButton);	
-		$(popoverContent).append(content);	
-	}
-
-	// set the popover size and position
-	popoverPosition(popover);
-
-	if(actionType == "show") {
-		// display the popover
-		$(popover).fadeIn();
-		$(shadow).show();
-	}
-}
-
-function popoverPosition(popover) {
-	var width = $(popover).children().find("img").prop("naturalWidth");
-	var height = $(popover).children().find("img").prop("naturalHeight");
-	var top = ( $(window).height() - height ) / 2  + "px";
-	var left = ( $(window).width() - width ) / 2 + "px";
-	$(popover).css({
-		'width' : width,
-		'height' : height,
-		'top' : top,
-		'left' : left
-	});
-}
-
-
-function getSiblingsIndex(className, imagesNum) {
-	var classes = className.split(' ');
-	var index, indexPrev, indexNext;
-	for (var index in classes) {
-        if (classes[index].match(/^block\d+$/)) {
-            index = parseInt(classes[index].match(/\d+/)[0]);
-            break;
-        }
-    }
-    indexPrev = (index != 0) ? index-1 : -1;
-    indexNext = (index < imagesNum) ? index+1 : -1;
-    return [indexPrev, indexNext];
-}
-
-
-function updatePopover(index, imagesNum) {
-	var nextImageClass = $(document).find("a.block" + (parseInt(index))).attr("class");
-	var nextImageSrc = $(document).find("a.block" + (parseInt(index)) + " img").attr("src");
-	popover('<img src="' + nextImageSrc + '"/>', nextImageClass, "update", imagesNum);
-	return false;
-}
-
-
-function closePopover(){
-	var popover = '#popover';
-	var shadow = '#popover-shadow';
-	var popoverControls = '.popover-controls';
-	$(popover).fadeOut();
-	$(popover).remove();
-	$(shadow).remove();
-	$(popoverControls).remove();
-}
+});
