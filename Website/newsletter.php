@@ -50,6 +50,14 @@ $value = "";
 				$_SESSION['newsletterProgress']=true;
 				$_SESSION['newsletterAction'] = "success";
 				
+				$db_query = mysqli_query($db, "SELECT * FROM `newsletter` WHERE `mail` LIKE '".$_SESSION['newsletterMail']."' ");
+				if($res = mysqli_fetch_array($db_query))
+				{
+					newsletterContent("default", "Diese Adresse ist schon registriert!");
+				}
+				else
+				{
+					
 				$db_query = mysqli_query($db, "INSERT INTO `skymap`.`newsletter` (`mail`, `status`) VALUES ('".$_SESSION['newsletterMail']."', 'active')")or die( mysql_error());
 				
 				$empfaenger = $_SESSION['newsletterMail'];
@@ -61,6 +69,7 @@ $value = "";
 				mail($empfaenger, $betreff , $cont, $from);
 				
 				newsletterContent("success");
+				}
 			}
 			else
 			{
