@@ -17,19 +17,5 @@
 	$tags = $newImages["tags"];
 	$downloadable = $newImages["downloadable"];
 
-	?>
-
-
-	<script>
-
-	alert(<?php echo 123 ?>);
-
-	</script>
-
-
-	<?php
-
-
-	mysqli_query($db, "INSERT INTO `skymap`.`galerie` (`id`, `title`, `href`, `description`, `date`, `tags`, `downloadable`, `likes`) VALUES (NULL, $title, $href, $description, NOW(), $tags, $downloadable, '0');");		
-
+	mysqli_query($db, "INSERT INTO `skymap`.`galerie` (`id`, `title`, `href`, `description`, `date`, `tags`, `downloadable`, `likes`) VALUES (NULL, '$title', '$href', '$description', NOW(), '$tags', '$downloadable', '0')");
 ?>
