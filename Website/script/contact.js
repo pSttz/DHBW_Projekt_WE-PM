@@ -59,6 +59,13 @@ function checkValResult(data, name)
 		document.getElementById(name+"_h").innerHTML = "✓ ";
 		checkedObjects[name]=true;
 	}
+	else if(name=="where")
+	{
+		//alert("asdf");
+		var wlist = document.getElementById("wheres");
+		wlist.innerHTML = data;
+		//alert(data);
+	}
 	else
 	{
 		document.getElementById(name+"_h").innerHTML = "✗ ";

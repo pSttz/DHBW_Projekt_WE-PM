@@ -20,10 +20,33 @@
 
 		<tr>
 		    <td>
-	            
+	            <div id="newsletter">
 				<?php
 				include("newsletter.php");
 				?>
+				</div>
+					
+				<script>
+
+				function newsletter(opt)
+				{
+					var form;
+					if(form = document.getElementById("newsletterForm"))
+					{
+						$.post("newsletter.php", {action:opt, value:form.itemValue.value}, function(data, status){ newsletterCallback(data); });
+					}
+					else
+					{
+						$.post("newsletter.php", {action:opt}, function(data, status){ newsletterCallback(data); });
+					}
+				}
+
+				function newsletterCallback(data)
+				{
+					document.getElementById("newsletter").innerHTML = data;
+				}
+
+				</script>
 				
 		    </td> 			  	          
 		    <td>
