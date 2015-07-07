@@ -9,12 +9,13 @@
 			
 			<h3>Kontakt</h3>
 			<p>Sie haben Fragen, Anregungen oder Wünsche an uns, unsere Produkte oder unsere Website? Treten Sie mit uns in Verbindung!</p>
-			<p>Sie erreichen uns zu den Geschäftszeiten unter der folgenden Adresse:
+			
 			<h4><b><BLOCKQUOTE>	
 					Max Muster<br>
 					Musterweg<br>
 					12345 Musterstadt<br>
 					01234-789456</BLOCKQUOTE></b></h4>
+			Sie erreichen uns zu den Geschäftszeiten unter dieser Adresse.
 			
 			<h3>Geschäftszeiten</h3>
 			<p>Montag - Freitag von 9-18 Uhr</p>

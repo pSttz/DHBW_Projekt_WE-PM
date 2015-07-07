@@ -140,6 +140,10 @@ h2 {
 	position: relative; 
 }
 
+.gallery.loading img {
+	display: none;
+}
+
 .gallery img {
 	float: left;
 }
@@ -154,6 +158,57 @@ h2 {
 	height: 100%;
 }
 
+.gallery .likes {
+	position: absolute;
+	top: 9px;
+	left: 9px;
+	text-decoration: none;
+	padding: 3px 6px 3px 20px;
+	line-height: 13px;
+	font-size: 11px;
+	opacity: 0.5;
+	-webkit-transition: all .1s ease-in-out; 
+	 -moz-transition: all .1s ease-in-out; 
+	 -o-transition: all .1s ease-in-out; 
+	 -ms-transition: all .1s ease-in-out; 
+	 transition: all .1s ease-in-out;
+	 z-index: 100;
+}
+
+.gallery .likes span {
+	position: relative;
+}
+
+.gallery .likes span:before {
+	content: "";
+	position: absolute;
+	left: -20px;
+	top: 0px;
+	width: 13px;
+	height: 13px;
+	background: url(../images/gallery/style/heart-white.png) 0 0 no-repeat;
+	background-size: 13px 13px;
+
+}
+
+.tiles-image:hover .likes {
+	color: #fff;
+	opacity: 0.8;
+	height: 26px;
+	line-height: 20px;
+	padding-left: 27px;
+	font-size: 14px;
+	border-radius: 3px;
+	background-color: #999;
+}
+
+.tiles-image:hover .likes span:before {
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+	left: -25px;
+}
+
 .tiles-item {
 	overflow: hidden;
 	float: left;
@@ -164,6 +219,8 @@ h2 {
 	background-repeat: no-repeat; 
 	background-position: 100% 50%;
 	background-size: 100%;
+	position: relative;
+	z-index: 10;
 }
 
 .tiles-item .desciption {
@@ -173,7 +230,6 @@ h2 {
     left: 0;
     bottom: 0;
     padding: 10px;
-    /*background: url("title.png") 0 0 repeat;*/
     color: #fff;
 }
 
@@ -268,14 +324,64 @@ h2 {
 }
 
 #popover #popover-close {
-    top: 15px;
-    right: 15px;
+    top: 7px;
+    right: 7px;
     width: 20px;
     height: 20px;
     line-height: 20px;
     padding-left: 2px;
 }
 
+#popover .popover-info-top,
+#popover .popover-info-bottom {
+	color: #000;
+	font-size: 12px;
+	text-align: left;
+}
+
+#popover .popover-info-top {
+	padding-bottom: 10px;
+}
+
+#popover .popover-info-bottom {
+	padding-top: 10px;
+}
+
+#popover .image-title {
+	padding-right: 20px;
+}
+
+#popover .image-description {
+	margin-bottom: 10px;
+}
+
+#popover .image-date {
+	display: inline-block;
+	color: #666;
+	padding-right: 10px;
+}
+
+#popover .image-likes {
+	display: inline-block;
+	padding-left: 10px;
+}
+
+#popover .image-likes span {
+	margin-left: 5px;
+	background: url(../images/gallery/style/heart-gray.png) 0 1px no-repeat;
+	background-size: 12px;
+	padding-left: 15px;
+	cursor: pointer;
+}
+
+#popover .image-likes:hover span {
+	background-image: url(../images/gallery/style/heart.png);
+}
+
+#popover .image-likes span.liked {
+	background-image: url(../images/gallery/style/heart.png);
+	cursor: default;
+}
 
 /*-------------------------- Products -----------------------------*/
 
@@ -365,7 +471,8 @@ input[type=submit]:hover, button:hover {
 	padding:10px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	width:100%;
 	padding:6px;
 	border-radius:4px;
@@ -598,6 +705,9 @@ select:focus {
 	vertical-align: top;
 	width: 23%;
 	margin: 0 1% 10px;
+	height: 150px;
+	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 #result li:nth-child(4n+1) {
@@ -608,14 +718,6 @@ select:focus {
 #result li:nth-child(4n+4) {
 	width: 24%;
 	margin-right: 0;
-}
-
-#result li .image {
-	width: 100%;
-	height: 150px;
-	float: left;
-	margin-bottom: 10px;
-	overflow: hidden;
 }
 
 #result li img {
@@ -629,6 +731,7 @@ select:focus {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 /*================= newsletter ====================== */
 
 
@@ -653,4 +756,86 @@ select:focus {
 	height:1em;
 	font-size:12px;
 	color:red;
+=======
+
+#add_images_form {
+	margin: 20px 0;
+}
+
+#add_images_form input,
+#add_images_form label,
+#add_images_form textarea {
+	float: left;
+	width: auto;
+	margin: 0 1% 12px 0;
+	vertical-align: top;
+}
+
+#add_images_form input[type=checkbox] {
+	margin: 0
+}
+
+#add_images_form textarea {
+	padding: 6px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#add_images_form #image-title {
+	width: 73%;
+}
+
+#add_images_form #image-href {
+	width: 25%;
+}
+
+#add_images_form .image-download {
+	width: 25%;
+	margin: 0 0 14px 0;
+	height: 31px;
+	line-height: 31px;
+}
+
+#add_images_form .image-download input {
+	height: 31px;
+	line-height: 31px;
+	margin-right: 5px;
+}
+
+#add_images_form #image-description {
+	width: 73%;
+}
+
+#add_images_form #image-tags {
+	width: 25%;
+}
+
+#add_images_form button {
+	width: 25%;
+	float: left;
+	margin: 0;
+}
+
+.alert {
+	float: left;
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.alert.success {
+	background-color: #2F9024;
+}
+
+.alert.error {
+	background-color: #B13926;
+}
+
+#login_form input {
+	width: auto;
+}
+
+#login_form input[type="submit"] {
+	width: 200px;
+>>>>>>> origin/20150706_develop_Anastasia
 }

@@ -76,10 +76,13 @@
         	
         	echo "<ul>";
          
+            $block = 0;
             foreach($results as $result) {
-                echo "<li><div class='image'><img src='images/gallery/"  . $result['href'] . "'/></div>";
-                echo "<div class='title'><a href='"  . $result['href'] . "'>". $result['title'] . "</a></div>";
-                echo "<div class='description'>" . $result['description'] . "</div></li>";
+                echo "<li class='image'>";
+                echo "<a class='popover level0 block".$block."' href='images/gallery/"  . $result['href'] . "'>";
+                echo "<img src='images/gallery/" . $result['href'] . "' data-id='" . $result['id'] . "' data-date='" . $result['date'] . "' data-description='" . $result['description'] . "' data-likes='" . $result['likes'] . "' title='" . $result['title'] . "'/>";
+                echo "</a></li>";
+                $block++;
             }
 
             echo "</ul>";

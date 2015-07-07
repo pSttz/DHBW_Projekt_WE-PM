@@ -8,7 +8,6 @@ function setDropdown() {
 
 function setInputValue() {
 	var current_query = getParamValue("q");
-	console.log(current_query);
 	if(current_query != "") {
 		$("#search").val(current_query);
 	}
@@ -23,19 +22,26 @@ function showSortResults(sort, dir, cookie_sort, cookie_dir) {
 	setDropdown();
 	setInputValue();
 
-	var xmlhttp = new XMLHttpRequest();
+	var xmlhttp = null;
+	if (window.XMLHttpRequest) {
+		xmlhttp = new XMLHttpRequest();
+	} 
+	else if (window.ActiveXObject) {
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
 	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { // 4 = loaded, 200 = success
 			$(".gallery").empty();
 			document.getElementById("result").innerHTML = xmlhttp.responseText;
 			addParamToUrl('s', sort);
 			addParamToUrl('dir', dir);
 
 			if(cookie_sort != sort) {
-				checkCookie("sort", sort, 365);
+				checkSetCookie("sort", sort, 365);
 			}
 			if(cookie_dir != dir) {
-				checkCookie("dir", dir, 365);				
+				checkSetCookie("dir", dir, 365);				
 			}
 		}
 	}
@@ -65,6 +71,7 @@ function makeSort(sort, dir) {
 		} 
 		else {
 			// console.log("New sort");
+			$(window).trigger('load'); 
 			showSortResults(sort, dir, cookie_sort, cookie_dir);
 		}
 	}
@@ -115,30 +122,4 @@ function removeParamFromUrl(url, param) {
 	url = url.replace(regex,'&');
 	url = url.replace(/(\?|&)$/,'');
 	return url;
-}
-
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname){
-	var re = new RegExp(cname + "=([^;]+)");
-	var value = re.exec(document.cookie);
-	return (value != null) ? unescape(value[1]) : "";
-}
-
-function checkCookie(cname, cvalue, exdays) {
-	if (getCookie(cname) == "") {
-		// console.log("No cookie");
-		setCookie(cname, cvalue, exdays);
-	}
-	else {
-		// console.log("Remove cookie");
-		setCookie(cname, "", -1);
-		// console.log("Set new cookie");
-		setCookie(cname, cvalue, exdays);
-	}
 }

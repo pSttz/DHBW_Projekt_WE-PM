@@ -9,7 +9,6 @@
 	    exit();
 	}
 
-	
 	// get search query
 	$query = $_REQUEST["q"];
 
@@ -18,7 +17,6 @@
 		$query = strtolower($query);
 		search($query, $db);
 	}
-
 
 	function search($query, $db) {
 		$min_length = 1;
@@ -46,10 +44,13 @@
 	        	echo "<ul>";
 	             
 	            // put data from database into array
+	            $block = 0;
 	            while($results = mysqli_fetch_array($db_results)) {
-	                echo "<li><div class='image'><img src='images/gallery/"  . $results['href'] . "'/></div>";
-	                echo "<span class='title'><a href='"  . $results['href'] . "'>". $results['title'] . "</a></span>";
-	                echo "<span class='description'>" . $results['description'] . "</span></li>";
+	                echo "<li class='image'>";
+	                echo "<a class='popover level0 block".$block."' href='images/gallery/"  . $results['href'] . "'>";
+	                echo "<img src='images/gallery/" . $results['href'] . "' data-id='" . $results['id'] . "' data-date='" . $results['date'] . "' data-description='" . $results['description'] . "' data-likes='" . $results['likes'] . "' title='" . $results['title'] . "'/>";
+	                echo "</a></li>";
+	                $block++;
 	            }
 
 	            echo "</ul>";

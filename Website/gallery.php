@@ -1,3 +1,4 @@
+<script type="text/javascript" src="script/gallery.js"></script>
 <script type="text/javascript" src="script/sort.js"></script>
 
 <h1>Galerie</h1>
@@ -23,45 +24,12 @@
 
 <div id="result"></div>
 
-<script>
-	$(document).ready(function() {
-		$('#search_form').submit(function(e) {   
-			makeSearch($(this).children('#search').val());
-			e.preventDefault(); 
-		});
-
-		$('#search_button').click(function(e) {   
-			makeSearch($(this).siblings('#search').val());
-		});
-
-		$('#sort_gallery').on('change', function() {
-			if(this.value == "no_sort") removeSort();
-			else if(this.value == "title_asc") makeSort("title", "asc");
-			else if(this.value == "title_desc") makeSort("title", "desc");
-			else if(this.value == "title_desc") makeSort("title", "desc");
-			else if(this.value == "date_asc") makeSort("date", "asc");
-			else if(this.value == "date_desc") makeSort("date", "desc");
-			else if(this.value == "tags_asc") makeSort("tags", "asc");
-			else if(this.value == "likes_asc") makeSort("likes", "asc");
-			// console.log(this.value);
-		});
-
-		$('#sort_button').click(function(e) {   
-			makeSort("title", "desc");
-		});
-	});
-</script>
-
-
 <?php 
-	$imageFolder = 'images/gallery/';
-	$imageTypes = '{*.jpg,*.JPG,*.jpeg,*.JPEG,*.png,*.PNG,*.gif,*.GIF}';
-
 	// if sort url - make sort
 	if (isset($_GET['s'])) {		
 		?>
 		<script>
-			console.log("Make sort");
+			// console.log("Make sort");
 			makeSort("<?php echo $_GET['s']; ?>","<?php echo (isset($_GET['dir']) ? $_GET['dir'] : '') ?>");
 		</script>
 		<?php
@@ -70,34 +38,33 @@
 	else if (isset($_GET['q'])) {		
 		?>
 		<script>
-			console.log("Make search");
+			// console.log("Make search");
 			makeSearch("<?php echo $_GET['q'] ?>");
 		</script>
 		<?php
 	} 
 	// else show gallery
 	else {
-		// Add images to array
-		// glob returns an array of filenames
-		// GLOB_BRACE expands {a,b,c} to match 'a', 'b', or 'c'
-		$images = glob($imageFolder . $imageTypes, GLOB_BRACE); 
+		$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
+		$db->set_charset("utf8");
 
-		if(count($images)) {
-			echo '<div class="gallery">';
-			foreach ($images as $image) {
-			    # Get the name of the image, stripped from image folder path and file type extension
-			    $name = substr($image, strlen($imageFolder), strpos($image, '.') - strlen($imageFolder));
-			    $lastModified = date('F d Y H:i:s', filemtime($image));
-			    echo '<img src="' . $image . '" alt="' . $name . ' ' . $lastModified . '" title="' . $name . '"/>';
+		// check connection
+		if (mysqli_connect_errno()) {
+		    printf("Connect failed: %s\n", mysqli_connect_error());
+		    exit();
+		}
+
+		$gallery = mysqli_query($db, "SELECT * FROM galerie") or die(mysql_error());
+		$count = mysqli_num_rows($gallery);
+
+		if($count > 0) {
+			echo '<div class="loader"><h2>Loading...</h2></div>';
+			echo '<div class="gallery loading">';
+
+			while($image = mysqli_fetch_array($gallery)) {
+				echo '<img src="images/gallery/' . $image['href'] . '" alt="' . $image['title'] . '" data-date="' . $image['date'] . '" data-description="' . $image['description'] .'" data-likes="' . $image['likes'] .'" data-id="' . $image['id'] .'" title="' . $image['title'] . '"/>';
 			}
-			// echo '<span class="loaded" style="display:none">loaded</span>';
 			echo '</div>';
-			?> 
-			<script type="text/javascript" src="script/gallery.js"></script>
-			<?php
 		}
 	}
 ?>
-
-
-

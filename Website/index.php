@@ -8,9 +8,6 @@
 <head>
 	<title>SKYMAP-Photography</title>
 	<link rel="icon" type="image/png" href="images/favicon/favicon.ico">
-	<?php
-	header('Content-Type: text/html; charset=UTF-8');
-	?>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
@@ -51,6 +48,9 @@
 						break;
 					case 'impressum':
 						include('impressum.php');
+						break;
+					case 'images':
+						include('admin/images.php');
 						break;
 					default:
 						include('home.php'); 
