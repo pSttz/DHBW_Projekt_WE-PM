@@ -621,9 +621,44 @@ select:focus {
 
 /*----------------------------------------------------Home-----------------------------------------*/
 
+.home {
+
+}
+
+.home td {
+	padding: 10px;
+	vertical-align: top;
+}
+
+.home td:first-child {
+	padding-left: 0;
+}
+
+.home td:last-child {
+	padding-right: 0;
+}
+
+.home table td {
+	padding: 0 10px;
+}
+
+.home td p,
+.home td h1,
+.home td h2,
+.home td h3,
+.home td h4 {
+	margin-top: 0;
+}
+
+.soc-icon {
+	text-decoration: none;
+}
+
+.soc-icon:hover {
+	opacity: 0.8;
+}
 
 .undecorated{
-
 	text-decoration: none;
 	color: #4CE6E6;
 	font-size: 25px;
@@ -636,6 +671,29 @@ select:focus {
 
 .corner{
 	border-radius: 6px;
+}
+
+.random-image {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 260px;
+	margin-bottom: 20px;
+	border: 4px solid #333;
+	outline: 1px solid #888;
+}
+
+.random-image.image-top {
+	height: 260px;
+}
+
+.random-image.image-middle {
+	height: 300px;
+}
+
+.random-image.image-bottom {
+	height: 200px;
 }
 
 
