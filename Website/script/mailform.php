@@ -52,7 +52,6 @@ function sendMail($pre, $name, $mail, $cont, $gender, $adress, $priv, $nlet)
 			$betreff = "Kontaktaufnahme $pre $name";
 			$from = "From: $pre $name <$mail>";
 			$from .= "Content-Type: text/plain\r\n";
-			$from .= "charset=\"utf-8\"\r\n";
 			mail($empfaenger, $betreff , $cont.$data, $from);
 			
 			$empfaenger = $mail;

@@ -49,7 +49,7 @@
 					<h4><span id="email_h"></span>Email*</h4>
 						<input type="text" name="email" placeholder="max.mustermann@muster.de" onblur="validateInput(this)"/>
 					<h4 title="Wir nutzen diese Angabe aus Werbezwecken und für personalisierte Angebote." style="cursor:help;"><span id="email_h"></span>Wohnort</h4>
-						<input type="text" name="where" placeholder="12345, Musterstadt" onkeyup="validateInput(this)" list="wheres">
+						<input type="text" name="where" placeholder="12345, Musterstadt" oninput="validateInput(this)" list="wheres">
 							<datalist id="wheres">
 								
 							</datalist>

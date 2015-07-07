@@ -3,6 +3,11 @@
 include "script/validator.php";
 include "script/newsletter.php";
 
+if(!isset($_SESSION))
+{
+	session_start();
+}
+
 $value = "";
 	if(isset($_POST['action']))
 	{
@@ -37,12 +42,15 @@ $value = "";
 			break;
 		//Es erfolgt die Überprüfung des Sicherheitscodes und der eventuell folgende Eintrag in die Datenbank//
 		case "Absenden":
-			if(@$_SESSION['newsletterMail']!=null && $value == @$_SESSION['newsletterCode'] || $value==999999999)
+			if(@$_SESSION['newsletterMail']!=null && trim($value) == $_SESSION['newsletterCode'] || $value==999999999)
 			{
+				$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
+				$db->set_charset("utf8");
+				
 				$_SESSION['newsletterProgress']=true;
 				$_SESSION['newsletterAction'] = "success";
 				
-				$db_results = mysqli_query($db, "INSERT INTO `skymap`.`newsletter` (`mail`, `status`) VALUES ('".$_SESSION['newsletterMail']."', 'active')")or die( mysql_error());
+				$db_query = mysqli_query($db, "INSERT INTO `skymap`.`newsletter` (`mail`, `status`) VALUES ('".$_SESSION['newsletterMail']."', 'active')")or die( mysql_error());
 				
 				$empfaenger = $_SESSION['newsletterMail'];
 				$cont = "Anmeldung erfolgreich!\r\n\r\nSie haben sich erfolgreich zum SKYMAP Newsletter angemeldet. Falls Sie sich umentscheiden sollten, antworten Sie entsprechend auf diese Mail und wir nehmen Sie aus unserem Verteiler.\r\n\r\nIhr SKYMAP Team";

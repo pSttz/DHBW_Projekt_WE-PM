@@ -47,7 +47,7 @@ function errorObject()
 
 function validateInput(obj)
 {
-	//errorm.set(obj.name);
+	
 	$.post("script/mailform.php?action=validate", {field:obj.name, value:obj.value}, function(data, status){ checkValResult(data, obj.name); })
 	checkValResult(false, obj.name);
 }
