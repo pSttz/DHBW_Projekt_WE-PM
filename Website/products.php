@@ -9,21 +9,14 @@
     }
 //-->
 </script>
-	<h1>Angebote</h1>
-<table id="product" >
-	<tr>
-		<td width="65%">	
+	<h1>Angebote</h1>	
 			<h2>Fotostudio</h2>
 			<p class="slogan">Ob für sich selbst oder als Geschenk, bei SKYMAP werden Ihre individuelle Fotowünsche umgesetzt.<br>
 			Unsere Leistungen:</p>
-		</td>
-		<td>
+		
 			<h2>Bestellungen</h2>
 			<p class="slogan">Sollten Sie sich noch nicht sicher sein, testen Sie eines unserer drei kostenlosen Produkten. Wir liefern sie direkt zu Ihnen nach Hause!</p>
-		</td>
-	</tr>
-	<tr>
-		<td>
+		
 			<div class="product">
 				<div onclick="toggle_visibility('passbilder');" class="productlink">&raquo; Passbilder</div>
 				<div id="passbilder" style='display:none;'>
@@ -147,13 +140,4 @@
 
 			</form>
 			-->
-		</td>
-		<td>
-			<?php
-			
-			include("order.php");
-			
-			?>
-		</td>
-	</tr>
-</table>
+		

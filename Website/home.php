@@ -1,11 +1,7 @@
 ﻿<?php
-  
-
-
 	$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
 	$db->set_charset("utf8");
 
-	// check connection
 	if (mysqli_connect_errno()) {
 	    printf("Connect failed: %s\n", mysqli_connect_error());
 	    exit();
@@ -13,21 +9,13 @@
 
   	$qry = mysqli_query($db, "SELECT * FROM galerie ORDER BY RAND() LIMIT 5") or die(mysql_error());
 
-  	//print_r($qry);
-
   	$rand_images = [];
 
 	while($rand = mysqli_fetch_array($qry)) { 
 		array_push($rand_images, $rand);
 		
 	}
-
-
-
-
-
 ?>
-
 
 <table class="home">
 		<tr>    
@@ -55,13 +43,44 @@
 		</tr>
 		<tr>
 		    <td>
-	            <p>Über 500 Kunden von Skymap Photography sprechen für sich. Steigen auch Sie noch heute ein und bestellen Sie den kostenlosen Skymap-Newsletter.<br>
-		        Dieser informiert Sie stets über aktuelle Entwicklungen und die neuesten Trends in der Foto-Branche. <BR>Selbstverständlich ist der Newsletter jederzeit abbestellbar.<br></p> 
-		        <p> Hier geht es weiter zur Bestellung des SKYMAP-Newsletters:</p>
+	            <p>Über 500 Kunden von Skymap Photography sprechen für sich. Steigen auch Sie noch heute ein und bestellen Sie den kostenlosen Skymap-Newsletter.</p>
+		        <p>Dieser informiert Sie stets über aktuelle Entwicklungen und die neuesten Trends in der Foto-Branche.<br/>Selbstverständlich ist der Newsletter jederzeit abbestellbar.</p> 
+		        <p>Hier geht es weiter zur Bestellung des SKYMAP-Newsletters:</p>
 
 		        <form action="?p=contact" method="post">  
 					<input type="submit" value="Newsletter anfordern"/>
 		        </form>
+
+	            <div id="newsletter">
+					<?php include("newsletter.php"); ?>
+				</div>
+					
+				<script>
+					function newsletter(opt) {
+						var form;
+						if(form = document.getElementById("newsletterForm")) {
+							$.post("newsletter.php", {
+								action:opt, 
+								value:form.itemValue.value
+							}, 
+							function(data, status) { 
+								newsletterCallback(data); 
+							});
+						}
+						else {
+							$.post("newsletter.php", {
+								action:opt
+							}, 
+							function(data, status) { 
+								newsletterCallback(data); 
+							});
+						}
+					}
+					function newsletterCallback(data) {
+						document.getElementById("newsletter").innerHTML = data;
+					}
+
+				</script>
 		    </td> 			  	          
 		    <td>
 		    	<table>
@@ -76,7 +95,6 @@
 		    <td>
 			    <h2>Aktuelles:</h2>
 		        <h4>Neue Suchfunktionen!</h4>
-
 			    <p>Nutzen Sie SKYMAP-Photography noch intensiver. Mit der verbesserten Suchfunktion kommen Sie schneller zu Ihrem gewünschten Motiv.</p>
 				<p>Hier geht es weiter zur Suchfuntion der Gallerie:</p>
 				
@@ -112,5 +130,4 @@
 				</form> 
 		    </td>
 		</tr>
-		  
 </table>		  

@@ -47,7 +47,7 @@ function errorObject()
 
 function validateInput(obj)
 {
-	//errorm.set(obj.name);
+	
 	$.post("script/mailform.php?action=validate", {field:obj.name, value:obj.value}, function(data, status){ checkValResult(data, obj.name); })
 	checkValResult(false, obj.name);
 }
@@ -58,6 +58,13 @@ function checkValResult(data, name)
 	{
 		document.getElementById(name+"_h").innerHTML = "✓ ";
 		checkedObjects[name]=true;
+	}
+	else if(name=="where")
+	{
+		//alert("asdf");
+		var wlist = document.getElementById("wheres");
+		wlist.innerHTML = data;
+		//alert(data);
 	}
 	else
 	{
