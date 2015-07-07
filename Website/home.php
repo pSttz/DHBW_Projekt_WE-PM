@@ -43,16 +43,17 @@
 		</tr>
 		<tr>
 		    <td>
-	            <p>Über 500 Kunden von Skymap Photography sprechen für sich. Steigen auch Sie noch heute ein und bestellen Sie den kostenlosen Skymap-Newsletter.</p>
-		        <p>Dieser informiert Sie stets über aktuelle Entwicklungen und die neuesten Trends in der Foto-Branche.<br/>Selbstverständlich ist der Newsletter jederzeit abbestellbar.</p> 
-		        <p>Hier geht es weiter zur Bestellung des SKYMAP-Newsletters:</p>
-
-		        <form action="?p=contact" method="post">  
-					<input type="submit" value="Newsletter anfordern"/>
-		        </form>
-
 	            <div id="newsletter">
-					<?php include("newsletter.php"); ?>
+	            	<div id="newsletterContent">
+						<h3>Newsletter Anmeldung</h3>
+						<p>Bestellen Sie noch heute den Newsletter von SKYMAP und bleiben Sie stets über aktuelle Angebote und neue Inhalte informiert!</p>
+						<p><small>Mit der der Eintragung stimmen Sie automatisch den <a href="?p=privacy">Datenschutzbedingungen</a> zu.</small></p>
+						<form action="" method="POST" onsubmit="return false" id="newsletterForm">  
+							<input type="text" name="itemValue" value="" placeholder="max.muster@muster.de"/>
+							<input type="submit" value="Eintragen" onclick="newsletter(this.value)"/>
+						</form>
+					</div>
+					<div id="newsletterErrors"></div>
 				</div>
 					
 				<script>
