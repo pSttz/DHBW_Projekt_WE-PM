@@ -731,7 +731,6 @@ select:focus {
 	text-align: center;
 }
 
-<<<<<<< HEAD
 /*================= newsletter ====================== */
 
 
@@ -756,8 +755,7 @@ select:focus {
 	height:1em;
 	font-size:12px;
 	color:red;
-=======
-
+}
 #add_images_form {
 	margin: 20px 0;
 }
@@ -837,5 +835,4 @@ select:focus {
 
 #login_form input[type="submit"] {
 	width: 200px;
->>>>>>> origin/20150706_develop_Anastasia
 }
