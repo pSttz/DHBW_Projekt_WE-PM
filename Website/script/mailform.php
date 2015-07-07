@@ -7,7 +7,7 @@ function to prove the entries of the contact formular
 */
 
 include("validator.php");
-
+include("newsletterfunctions.php"); 
 if($action=="validate")
 {
 	$field = $_POST['field'];
@@ -64,8 +64,12 @@ function sendMail($pre, $name, $mail, $cont, $gender, $adress, $priv, $nlet)
 			
 			if($nlet=="newsletter")
 			{
-				$output = $output."<br />Sie erhalten die SKYMAP Newsletter";
-				//TODO : Newsletter eintragung
+				
+				if(insertNewsletterMail($mail))
+				{
+					$output = $output."<br />Sie erhalten die SKYMAP Newsletter";
+				}
+				
 			}
 			$output = $output."<br /><a href='?p=contact'>zurück</a>";
 			return $output;

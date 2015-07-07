@@ -1,4 +1,5 @@
 <?php
+
 function validator($field, $value)
 {
 	switch($field)

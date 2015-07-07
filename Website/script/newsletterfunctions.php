@@ -50,4 +50,35 @@ function newsletterContent($cont, $err="")
 			break;
 	}
 }
+
+
+function insertNewsletterMail($mail)
+{
+	if(@$db==null)
+	{
+		$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
+		$db->set_charset("utf8");
+	}
+	
+		
+	$db_query = mysqli_query($db, "SELECT * FROM `newsletter` WHERE `mail` LIKE '".$mail."' ");
+	
+	if($res = mysqli_fetch_array($db_query))
+	{
+		return false;
+	}
+	else
+	{
+			
+		$db_query = mysqli_query($db, "INSERT INTO `skymap`.`newsletter` (`mail`, `status`) VALUES ('".$mail."', 'active')")or die( mysql_error());
+		
+		$cont = "Anmeldung erfolgreich!\r\n\r\nSie haben sich erfolgreich zum SKYMAP Newsletter angemeldet. Falls Sie sich umentscheiden sollten, antworten Sie entsprechend auf diese Mail und wir nehmen Sie aus unserem Verteiler.\r\n\r\nIhr SKYMAP Team";
+		$betreff = "Anmeldung erfolgreich - SKYMAP Newsletter";
+		$from = "From: SKYMAP <webmaster@skymap.ixdee.de>";
+		$from .= "Content-Type: text/plain\r\n";
+		mail($mail, $betreff , $cont, $from);
+		return true;
+	}
+}
+
 ?>

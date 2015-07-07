@@ -1,7 +1,7 @@
 
 <?php
 include "script/validator.php";
-include "script/newsletter.php";
+include "script/newsletterfunctions.php";
 
 if(!isset($_SESSION))
 {
@@ -30,7 +30,6 @@ $value = "";
 				$betreff = "Sicherheitscode - SKYMAP Newsletter";
 				$from = "From: SKYMAP <webmaster@skymap.ixdee.de>";
 				$from .= "Content-Type: text/plain\r\n";
-				$from .= "charset=\"utf-8\"\r\n";
 				mail($empfaenger, $betreff , $cont, $from);
 				
 				newsletterContent("scode");
@@ -44,32 +43,18 @@ $value = "";
 		case "Absenden":
 			if(@$_SESSION['newsletterMail']!=null && trim($value) == $_SESSION['newsletterCode'] || $value==999999999)
 			{
-				$db = mysqli_connect("localhost", "skymap", "u6&bNl58", "skymap");
-				$db->set_charset("utf8");
 				
 				$_SESSION['newsletterProgress']=true;
 				$_SESSION['newsletterAction'] = "success";
-				
-				$db_query = mysqli_query($db, "SELECT * FROM `newsletter` WHERE `mail` LIKE '".$_SESSION['newsletterMail']."' ");
-				if($res = mysqli_fetch_array($db_query))
+				if(insertNewsletterMail($_SESSION['newsletterMail'])==true)
 				{
-					newsletterContent("default", "Diese Adresse ist schon registriert!");
+					newsletterContent("success");
 				}
 				else
 				{
-					
-				$db_query = mysqli_query($db, "INSERT INTO `skymap`.`newsletter` (`mail`, `status`) VALUES ('".$_SESSION['newsletterMail']."', 'active')")or die( mysql_error());
-				
-				$empfaenger = $_SESSION['newsletterMail'];
-				$cont = "Anmeldung erfolgreich!\r\n\r\nSie haben sich erfolgreich zum SKYMAP Newsletter angemeldet. Falls Sie sich umentscheiden sollten, antworten Sie entsprechend auf diese Mail und wir nehmen Sie aus unserem Verteiler.\r\n\r\nIhr SKYMAP Team";
-				$betreff = "Anmeldung erfolgreich - SKYMAP Newsletter";
-				$from = "From: SKYMAP <webmaster@skymap.ixdee.de>";
-				$from .= "Content-Type: text/plain\r\n";
-				$from .= "charset=\"utf-8\"\r\n";
-				mail($empfaenger, $betreff , $cont, $from);
-				
-				newsletterContent("success");
+					newsletterContent("default", "Diese Adresse ist schon registriert!");
 				}
+				
 			}
 			else
 			{
